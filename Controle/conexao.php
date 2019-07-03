@@ -3,7 +3,7 @@
                
         public function getConexao(){
          
-           $con = new PDO('mysql:host=localhost;dbname=igreja','root','windows#s3rv3r');
+           $con = new PDO('mysql:host=localhost;dbname=igreja','root','');
             return $con;
           
         }

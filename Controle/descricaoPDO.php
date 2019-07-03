@@ -83,17 +83,23 @@ class DescricaoPDO{
     }
     
  
-    public function updateDescricao(Descricao $Descricao){        
+    public function updateDescricao(Descricao $descricao){        
         $con = new conexao();
         $pdo = $con->getConexao();
-        $stmt = $pdo->prepare('update descricaoset texto = :texto where id = :id;');
+        $stmt = $pdo->prepare('update descricao set texto = :texto where id = :id;');
         $stmt->bindValue(':texto', $descricao->getTexto());
         
         $stmt->bindValue(':id', $descricao->getId());
         $stmt->execute();
         return $stmt->rowCount();
     }            
-    
+    public function update(){
+        $desc = new descricao($_POST);
+        $this->updateDescricao($desc);
+        header('location: ../Tela/listarDescricao.php');
+    }
+
+
     public function deleteDescricao($definir){
         $con = new conexao();
         $pdo = $con->getConexao();

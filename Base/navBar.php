@@ -76,14 +76,10 @@ if (realpath("./index.php")) {
 
                 </ul>
             </li>
+            <li><a href="<?php echo $pontos; ?>./Controle/usuariosControle.php?function=logout" class="black-text">Sair</a></li>
             <!--usuarios-->
             <!--proximo-->
             <!--proximo-->
-            
-
-            
-
-
 
         </ul>
     </div>
