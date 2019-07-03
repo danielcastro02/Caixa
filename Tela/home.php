@@ -47,8 +47,23 @@
                                         </a>
                                     </div>
                                     <div class="row">
-                                        <a href="./criarelatorio.php" class="btn-large col s12 cyan lighten-1 waves-effect">
+                                        <a href="./novoRelatorio.php" class="btn-large col s12 cyan lighten-1 waves-effect">
                                             <h5>Novo Relatório</h5>
+                                        </a>
+                                    </div>
+                                    <div class="row">
+                                        <a href="./listarRelatorio.php" class="btn-large col s12 cyan lighten-1 waves-effect">
+                                            <h5>Listar Relatório</h5>
+                                        </a>
+                                    </div>
+                                    <div class="row">
+                                        <a href="./novaDescricao.php" class="btn-large col s12 cyan lighten-1 waves-effect">
+                                            <h5>Nova Descrição</h5>
+                                        </a>
+                                    </div>
+                                    <div class="row">
+                                        <a href="./listarDescricao.php" class="btn-large col s12 cyan lighten-1 waves-effect">
+                                            <h5>Listar Descrição</h5>
                                         </a>
                                     </div>
                                 </div>
@@ -66,7 +81,7 @@
                             <div class="row">
                                 <div class="container">
                                     <div class="row">
-                                        <a href="./relatoriosmensais.php" class="btn-large col s12 cyan lighten-1 waves-effect">
+                                        <a href="./consultaRelatorio.php" class="btn-large col s12 cyan lighten-1 waves-effect">
                                             <h5>Consultar Relatorios</h5>
                                         </a>
                                     </div>

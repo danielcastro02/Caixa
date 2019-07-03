@@ -102,4 +102,10 @@ class DescricaoPDO{
         $stmt->execute();
         return $stmt->rowCount();
     }
+    
+    public function deletar(){
+        $this->deleteDescricao($_GET['id']);
+        header('location: ../Tela/listarDescricao.php');
+    }
+    
 /*chave*/}

@@ -18,7 +18,7 @@
         ?>
         <main>
             <div class="row" style="margin-top: 10vh;">
-                <form action="../Controle/movimentoControle.php.php?function=inserirMovimento" class="card col l8 offset-l2 m10 offset-m1 s10 offset-s1" method="post">
+                <form action="../Controle/movimentoControle.php?function=inserirMovimento" class="card col l8 offset-l2 m10 offset-m1 s10 offset-s1" method="post">
                     <div class="row center">
                         <h4 class="textoCorPadrao2">Registre a Saida</h4>
                         <div class="input-field col s6">
@@ -40,7 +40,7 @@
                             <label>Dia</label>
                         </div>
                         <div class="input-field col s6">
-                            <input type="number" name="valor"  class="input-field">
+                            <input type="number" step="0.01" name="valor"  class="input-field">
                             <label>Valor</label>
                         </div>
                         <input type="text" hidden="true" value="saida" name="operacao"/>

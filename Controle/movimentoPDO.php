@@ -15,39 +15,45 @@ if (realpath('./index.php')) {
     }
 }
 
+class MovimentoPDO {
+    /* inserir */
 
-class MovimentoPDO{
-    /*inserir*/
     function inserirMovimento() {
         $movimento = new movimento($_POST);
         $con = new conexao();
         $pdo = $con->getConexao();
-        $stmt = $pdo->prepare('insert into Movimento values(default , :id_mes , :data , :valor , :operacao , :descricao);' );
+        $stmt = $pdo->prepare('insert into Movimento values(default , :id_mes , :data , :valor , :operacao , :descricao);');
 
-        
-        $stmt->bindValue(':id_mes', $movimento->getId_mes());    
-        
-        $stmt->bindValue(':data', $movimento->getData());    
-        
-        $stmt->bindValue(':valor', $movimento->getValor());    
-        
-        $stmt->bindValue(':operacao', $movimento->getOperacao());    
-        
-        $stmt->bindValue(':descricao', $movimento->getDescricao());    
-        
-        if($stmt->execute()){ 
-            header('location: ../index.php?msg=movimentoInserido');
-        }else{
-            header('location: ../index.php?msg=movimentoErroInsert');
+
+        $stmt->bindValue(':id_mes', $movimento->getId_mes());
+
+        $stmt->bindValue(':data', $movimento->getData());
+
+        $stmt->bindValue(':valor', $movimento->getValor());
+
+        $stmt->bindValue(':operacao', $movimento->getOperacao());
+
+        $stmt->bindValue(':descricao', $movimento->getDescricao());
+
+        if ($stmt->execute()) {
+            if ($movimento->getOperacao() == 'entrada') {
+                header('location: ../Tela/entrada.php?msg=movimentoInserido');
+            } else {
+                header('location: ../Tela/saida.php?msg=movimentoInserido');
+            }
+        } else {
+            if ($movimento->getOperacao() == 'entrada') {
+                header('location: ../Tela/entrada.php?msg=movimentoErroInsert');
+            } else {
+                header('location: ../Tela/saida.php?msg=movimentoErroInsert');
+            }
         }
     }
-    /*inserir*/
-    
 
-            
+    /* inserir */
 
-    public function selectMovimento(){
-            
+    public function selectMovimento() {
+
         $con = new conexao();
         $pdo = $con->getConexao();
         $stmt = $pdo->prepare('select * from movimento ;');
@@ -58,11 +64,9 @@ class MovimentoPDO{
             return false;
         }
     }
-    
 
-                    
-    public function selectMovimentoId($id){
-            
+    public function selectMovimentoId($id) {
+
         $con = new conexao();
         $pdo = $con->getConexao();
         $stmt = $pdo->prepare('select * from movimento where id = :id;');
@@ -74,14 +78,12 @@ class MovimentoPDO{
             return false;
         }
     }
-    
 
-                    
-    public function selectMovimentoId_mes($id_mes){
-            
+    public function selectMovimentoId_mes($id_mes) {
+
         $con = new conexao();
         $pdo = $con->getConexao();
-        $stmt = $pdo->prepare('select * from movimento where id_mes = :id_mes;');
+        $stmt = $pdo->prepare('select * from movimento where id_mes = :id_mes order by data;');
         $stmt->bindValue(':id_mes', $id_mes);
         $stmt->execute();
         if ($stmt->rowCount() > 0) {
@@ -90,11 +92,9 @@ class MovimentoPDO{
             return false;
         }
     }
-    
 
-                    
-    public function selectMovimentoData($data){
-            
+    public function selectMovimentoData($data) {
+
         $con = new conexao();
         $pdo = $con->getConexao();
         $stmt = $pdo->prepare('select * from movimento where data = :data;');
@@ -106,11 +106,9 @@ class MovimentoPDO{
             return false;
         }
     }
-    
 
-                    
-    public function selectMovimentoValor($valor){
-            
+    public function selectMovimentoValor($valor) {
+
         $con = new conexao();
         $pdo = $con->getConexao();
         $stmt = $pdo->prepare('select * from movimento where valor = :valor;');
@@ -122,11 +120,9 @@ class MovimentoPDO{
             return false;
         }
     }
-    
 
-                    
-    public function selectMovimentoOperacao($operacao){
-            
+    public function selectMovimentoOperacao($operacao) {
+
         $con = new conexao();
         $pdo = $con->getConexao();
         $stmt = $pdo->prepare('select * from movimento where operacao = :operacao;');
@@ -138,11 +134,9 @@ class MovimentoPDO{
             return false;
         }
     }
-    
 
-                    
-    public function selectMovimentoDescricao($descricao){
-            
+    public function selectMovimentoDescricao($descricao) {
+
         $con = new conexao();
         $pdo = $con->getConexao();
         $stmt = $pdo->prepare('select * from movimento where descricao = :descricao;');
@@ -154,28 +148,27 @@ class MovimentoPDO{
             return false;
         }
     }
-    
- 
-    public function updateMovimento(Movimento $Movimento){        
+
+    public function updateMovimento(Movimento $Movimento) {
         $con = new conexao();
         $pdo = $con->getConexao();
         $stmt = $pdo->prepare('updatemovimentoset id_mes = :id_mes , data = :data , valor = :valor , operacao = :operacao , descricao = :descricao where id = :id;');
         $stmt->bindValue(':id_mes', $movimento->getId_mes());
-        
+
         $stmt->bindValue(':data', $movimento->getData());
-        
+
         $stmt->bindValue(':valor', $movimento->getValor());
-        
+
         $stmt->bindValue(':operacao', $movimento->getOperacao());
-        
+
         $stmt->bindValue(':descricao', $movimento->getDescricao());
-        
+
         $stmt->bindValue(':id', $movimento->getId());
         $stmt->execute();
         return $stmt->rowCount();
-    }            
-    
-    public function deleteMovimento($definir){
+    }
+
+    public function deleteMovimento($definir) {
         $con = new conexao();
         $pdo = $con->getConexao();
         $stmt = $pdo->prepare('delete from movimento where definir = :definir ;');
@@ -183,4 +176,5 @@ class MovimentoPDO{
         $stmt->execute();
         return $stmt->rowCount();
     }
-/*chave*/}
+
+    /* chave */}

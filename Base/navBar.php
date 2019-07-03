@@ -40,6 +40,7 @@ if (realpath("./index.php")) {
                 <ul id='relatorio_mensal' class='dropdown-content'>
                     <li><a href="<?php echo $pontos; ?>./Tela/novoRelatorio.php">Novo</a></li>
                     <li><a href="<?php echo $pontos; ?>./Tela/listarRelatorio.php">Listar</a></li>
+                    <li><a href="<?php echo $pontos; ?>./Tela/consultarRelatorio.php">Consultar Relatório</a></li>
                     <!--relatorio_mensalitem-->
                     <!--relatorio_mensalitem-->
                 </ul>
