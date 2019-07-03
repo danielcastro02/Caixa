@@ -10,6 +10,7 @@ if (realpath("./index.php")) {
             $pontos = '../.';
         }
     }
+    session_start();
     if(!isset($_SESSION['logado'])){
         header('location: '.$pontos.'./Tela/login.php');
     }else{

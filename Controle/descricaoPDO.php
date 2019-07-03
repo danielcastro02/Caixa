@@ -27,9 +27,9 @@ class DescricaoPDO{
         $stmt->bindValue(':texto', $descricao->getTexto());    
         
         if($stmt->execute()){ 
-            header('location: ../index.php?msg=descricaoInserido');
+            header('location: ../Tela/home.php?msg=descricaoInserido');
         }else{
-            header('location: ../index.php?msg=descricaoErroInsert');
+            header('location: ../Tela/home.php?msg=descricaoErroInsert');
         }
     }
     /*inserir*/
@@ -86,7 +86,7 @@ class DescricaoPDO{
     public function updateDescricao(Descricao $Descricao){        
         $con = new conexao();
         $pdo = $con->getConexao();
-        $stmt = $pdo->prepare('updatedescricaoset texto = :texto where id = :id;');
+        $stmt = $pdo->prepare('update descricaoset texto = :texto where id = :id;');
         $stmt->bindValue(':texto', $descricao->getTexto());
         
         $stmt->bindValue(':id', $descricao->getId());

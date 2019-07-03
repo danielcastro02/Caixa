@@ -6,7 +6,7 @@ private $id;
 private $mes;
 private $ano;
 private $status;
-private $saldo_inicial;
+private $anterior;
 private $saldofinal;
 
 
@@ -61,12 +61,12 @@ public function __construct() {
           $this->status = $status;
      }
 
-     public function getSaldo_inicial(){
-         return $this->saldo_inicial;
+     public function getAnterior(){
+         return $this->anterior;
      }
 
-     function setSaldo_inicial($saldo_inicial){
-          $this->saldo_inicial = $saldo_inicial;
+     function setAnterior($saldo_inicial){
+          $this->anterior = $saldo_inicial;
      }
 
      public function getSaldofinal(){
