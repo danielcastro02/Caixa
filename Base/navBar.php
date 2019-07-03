@@ -1,35 +1,54 @@
 <?php
 $pontos = "";
 if (realpath("./index.php")) {
-    $pontos = './';
+    $pontos = '';
 } else {
     if (realpath("../index.php")) {
-        $pontos = '../';
+        $pontos = '.';
     } else {
         if (realpath("../../index.php")) {
-            $pontos = '../../';
+            $pontos = '../.';
         }
+    }
+    if(!isset($_SESSION['logado'])){
+        header('location: '.$pontos.'./Tela/login.php');
+    }else{
+        include_once $pontos.'./Modelo/Usuarios.php';
+        $logado = new usuarios(unserialize($_SESSION['logado']));
     }
 }
 ?>
 
 <nav class="nav-extended white">
     <div class="nav-wrapper" style="width: 100vw; margin-left: auto; margin-right: auto;">
-        <a href="<?php echo $pontos; ?>./Tela/home.php" class="brand-logo left black-text">Sloth</a>
+        <a href="<?php echo $pontos; ?>./Tela/home.php" class="brand-logo left black-text">IELSPJ</a>
         <ul class="right hide-on-med-and-down">
             <!--movimento-->
+            <li><a href="#!" class="black-text"><?php echo $logado->getNome() ?></a></li>
             <li>
-                <a class='dropdown-trigger center black-text' style="background-color: transparent" data-hover="true" href='#' data-target='movimento'>Movimento</a>
+                <a class='dropdown-trigger center black-text' data-hover="true" href='#' data-target='movimento'>Movimento</a>
                 <ul id='movimento' class='dropdown-content'>
-                    <!--movimentoitem-->
-                    <!--movimentoitem-->
+                    <li><a href="<?php echo $pontos; ?>./Tela/entrada.php">Registrar Entrada</a></li>
+                    <li><a href="<?php echo $pontos; ?>./Tela/saida.php">Registrar Saida</a></li>
                 </ul>
             </li>
             <!--movimento-->
             <!--relatorio_mensal-->
             <li>
-                <a class='dropdown-trigger center black-text' style="background-color: transparent" data-hover="true" href='#' data-target='relatorio_mensal'>Relatorio_mensal</a>
+                <a class='dropdown-trigger center black-text'  data-hover="true" href='#' data-target='relatorio_mensal'>Relatorio mensal</a>
                 <ul id='relatorio_mensal' class='dropdown-content'>
+                    <li><a href="<?php echo $pontos; ?>./Tela/novoRelatorio.php">Novo</a></li>
+                    <li><a href="<?php echo $pontos; ?>./Tela/listarRelatorio.php">Listar</a></li>
+                    <!--relatorio_mensalitem-->
+                    <!--relatorio_mensalitem-->
+                </ul>
+            </li>
+            
+            <li>
+                <a class='dropdown-trigger center black-text'  data-hover="true" href='#' data-target='desc'>Descrição</a>
+                <ul id='desc' class='dropdown-content'>
+                    <li><a href="<?php echo $pontos; ?>./Tela/novaDescricao.php">Nova</a></li>
+                    <li><a href="<?php echo $pontos; ?>./Tela/listarDescricao.php">Listar</a></li>
                     <!--relatorio_mensalitem-->
                     <!--relatorio_mensalitem-->
                 </ul>
@@ -37,7 +56,7 @@ if (realpath("./index.php")) {
             <!--relatorio_mensal-->
             <!--usuarios-->
             <li>
-                <a class='dropdown-trigger center black-text' style="background-color: transparent" data-hover="true" href='#' data-target='usuarios'>Usuarios</a>
+                <a class='dropdown-trigger center black-text'  data-hover="true" href='#' data-target='usuarios'>Usuarios</a>
                 <ul id='usuarios' class='dropdown-content'>
                     
             <!--usuarioslogin-->

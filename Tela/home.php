@@ -2,7 +2,7 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-if (!isset($_SESSION['id'])) {
+if (!isset($_SESSION['logado'])) {
     header('location: ../index.php');
 }
 ?>
@@ -11,7 +11,7 @@ if (!isset($_SESSION['id'])) {
     <head>
         <title>Home</title>
         <?php
-        include_once '../Bases/base.php';
+        include_once '../Base/header.php';
         ?>
 
     </head>
@@ -19,7 +19,7 @@ if (!isset($_SESSION['id'])) {
     <body class="homeimg">
         <nav class="nav-extended cyan lighten-2">
             <?php
-            include_once '../Bases/nav.php';
+            include_once '../Base/navBar.php';
             ?>
         </nav>
         <main id="main">

@@ -22,10 +22,8 @@ class Relatorio_mensalPDO{
         $relatorio_mensal = new relatorio_mensal($_POST);
         $con = new conexao();
         $pdo = $con->getConexao();
-        $stmt = $pdo->prepare('insert into Relatorio_mensal values(:id , :mes , :ano , :status , :saldo_inicial , :saldofinal);' );
+        $stmt = $pdo->prepare('insert into Relatorio_mensal values(default , :mes , :ano , :status , :saldo_inicial , :saldofinal);' );
 
-        $stmt->bindValue(':id', $relatorio_mensal->getId());    
-        
         $stmt->bindValue(':mes', $relatorio_mensal->getMes());    
         
         $stmt->bindValue(':ano', $relatorio_mensal->getAno());    

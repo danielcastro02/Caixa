@@ -22,9 +22,8 @@ class MovimentoPDO{
         $movimento = new movimento($_POST);
         $con = new conexao();
         $pdo = $con->getConexao();
-        $stmt = $pdo->prepare('insert into Movimento values(:id , :id_mes , :data , :valor , :operacao , :descricao);' );
+        $stmt = $pdo->prepare('insert into Movimento values(default , :id_mes , :data , :valor , :operacao , :descricao);' );
 
-        $stmt->bindValue(':id', $movimento->getId());    
         
         $stmt->bindValue(':id_mes', $movimento->getId_mes());    
         

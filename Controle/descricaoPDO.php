@@ -22,10 +22,8 @@ class DescricaoPDO{
         $descricao = new descricao($_POST);
         $con = new conexao();
         $pdo = $con->getConexao();
-        $stmt = $pdo->prepare('insert into Descricao values(:id , :texto);' );
+        $stmt = $pdo->prepare('insert into Descricao values(default , :texto);' );
 
-        $stmt->bindValue(':id', $descricao->getId());    
-        
         $stmt->bindValue(':texto', $descricao->getTexto());    
         
         if($stmt->execute()){ 
