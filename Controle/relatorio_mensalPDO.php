@@ -32,7 +32,7 @@ class Relatorio_mensalPDO {
         $anterior = new relatorio_mensal($anterior->fetch());
         $anterior->setStatus("lincado");
         $this->updateRelatorio_mensal($anterior);
-        $stmt = $pdo->prepare('insert into Relatorio_mensal values(default , :mes , :ano , :status , :anterior , :saldofinal);');
+        $stmt = $pdo->prepare('insert into relatorio_mensal values(default , :mes , :ano , :status , :anterior , 0);');
 
         $stmt->bindValue(':mes', $relatorio_mensal->getMes());
 
@@ -42,12 +42,11 @@ class Relatorio_mensalPDO {
 
         $stmt->bindValue(':anterior', $anterior->getId());
 
-        $stmt->bindValue(':saldofinal', $relatorio_mensal->getSaldofinal());
 
         if ($stmt->execute()) {
             header('location: ../Tela/home.php?msg=relatorio_mensalInserido');
         } else {
-            header('location: ../Tela/home.php?msg=relatorio_mensalErroInsert');
+            //header('location: ../Tela/home.php?msg=relatorio_mensalErroInsert');
         }
     }
 
@@ -91,9 +90,8 @@ class Relatorio_mensalPDO {
             }
         }
         $relatorio->setSaldofinal($saldo);
-        var_dump($relatorio);
         $this->updateRelatorio_mensal($relatorio);
-        header('location: ../Tela/ListarRelatorio.php');
+        header('location: ../Tela/istarRelatorio.php');
     }
 
     public function selectRelatorio_mensal() {

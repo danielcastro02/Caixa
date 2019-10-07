@@ -25,7 +25,7 @@ class UsuariosPDO{
             $senhamd5 = md5($_POST['senha1']);
             $con = new conexao();
             $pdo = $con->getConexao();
-            $stmt = $pdo->prepare('insert into Usuarios values(default , :nome , :usuario , :senha);' );
+            $stmt = $pdo->prepare('insert into usuarios values(default , :nome , :usuario , :senha);' );
 
             $stmt->bindValue(':nome', $usuarios->getNome());    
         

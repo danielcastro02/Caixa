@@ -22,7 +22,7 @@ class DescricaoPDO{
         $descricao = new descricao($_POST);
         $con = new conexao();
         $pdo = $con->getConexao();
-        $stmt = $pdo->prepare('insert into Descricao values(default , :texto);' );
+        $stmt = $pdo->prepare('insert into descricao values(default , :texto);' );
 
         $stmt->bindValue(':texto', $descricao->getTexto());    
         

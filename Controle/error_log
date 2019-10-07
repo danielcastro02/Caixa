@@ -1,0 +1,26 @@
+[12-Jul-2019 17:12:01 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/nobads80/igreja.nobadserver.com/Controle/relatorio_mensalPDO.php:69) in /home3/nobads80/igreja.nobadserver.com/Controle/relatorio_mensalPDO.php on line 96
+[14-Aug-2019 11:57:25 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/nobads80/igreja.nobadserver.com/Controle/relatorio_mensalPDO.php:68) in /home3/nobads80/igreja.nobadserver.com/Controle/relatorio_mensalPDO.php on line 94
+[14-Aug-2019 11:57:35 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/nobads80/igreja.nobadserver.com/Controle/relatorio_mensalPDO.php:68) in /home3/nobads80/igreja.nobadserver.com/Controle/relatorio_mensalPDO.php on line 94
+[19-Sep-2019 12:46:57 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[19-Sep-2019 09:46:57 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'PDO' not found in /home3/nobads80/igreja.nobadserver.com/Controle/conexao.php:6
+Stack trace:
+#0 /home3/nobads80/igreja.nobadserver.com/Controle/usuariosPDO.php(157): conexao->getConexao()
+#1 /home3/nobads80/igreja.nobadserver.com/Controle/usuariosControle.php(23): UsuariosPDO->login()
+#2 {main}
+  thrown in /home3/nobads80/igreja.nobadserver.com/Controle/conexao.php on line 6
+[19-Sep-2019 12:47:43 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[19-Sep-2019 09:47:43 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'PDO' not found in /home3/nobads80/igreja.nobadserver.com/Controle/conexao.php:6
+Stack trace:
+#0 /home3/nobads80/igreja.nobadserver.com/Controle/usuariosPDO.php(157): conexao->getConexao()
+#1 /home3/nobads80/igreja.nobadserver.com/Controle/usuariosControle.php(23): UsuariosPDO->login()
+#2 {main}
+  thrown in /home3/nobads80/igreja.nobadserver.com/Controle/conexao.php on line 6
+[19-Sep-2019 12:59:32 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ixed.7.1.lin' (tried: /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin: undefined symbol: _zval_ptr_dtor), /opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so (/opt/php71/lib/php/extensions/no-debug-non-zts-20160303/ixed.7.1.lin.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[19-Sep-2019 09:59:32 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'PDO' not found in /home3/nobads80/igreja.nobadserver.com/Controle/conexao.php:6
+Stack trace:
+#0 /home3/nobads80/igreja.nobadserver.com/Controle/usuariosPDO.php(157): conexao->getConexao()
+#1 /home3/nobads80/igreja.nobadserver.com/Controle/usuariosControle.php(23): UsuariosPDO->login()
+#2 {main}
+  thrown in /home3/nobads80/igreja.nobadserver.com/Controle/conexao.php on line 6
+[19-Sep-2019 16:06:28 UTC] PHP Warning:  Version warning: Imagick was compiled against Image Magick version 1650 but version 1654 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
+[19-Sep-2019 16:32:02 UTC] PHP Warning:  Version warning: Imagick was compiled against Image Magick version 1650 but version 1654 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
