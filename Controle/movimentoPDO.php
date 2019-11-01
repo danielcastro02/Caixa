@@ -1,29 +1,22 @@
 <?php
 
-if (realpath('./index.php')) {
-    include_once './Controle/conexao.php';
-    include_once './Modelo/Movimento.php';
-} else {
-    if (realpath('../index.php')) {
-        include_once '../Controle/conexao.php';
-        include_once '../Modelo/Movimento.php';
-    } else {
-        if (realpath('../../index.php')) {
-            include_once '../../Controle/conexao.php';
-            include_once '../../Modelo/Movimento.php';
-        }
-    }
-}
 
-class MovimentoPDO {
+include_once __DIR__ . '/../Controle/conexao.php';
+include_once __DIR__ . '/../Modelo/Movimento.php';
+include_once __DIR__ . "/../Modelo/Usuarios.php";
+
+
+class MovimentoPDO
+{
     /* inserir */
 
-    function inserirMovimento() {
+    function inserirMovimento()
+    {
         $movimento = new movimento($_POST);
         $con = new conexao();
         $pdo = $con->getConexao();
-        $stmt = $pdo->prepare('insert into movimento values(default , :id_mes , :data , :valor , :operacao , :descricao);');
-
+        $stmt = $pdo->prepare('insert into movimento values(default , :id_mes , :data , :valor , :operacao , :descricao , :id_usuario , default);');
+        $logado = new usuarios(unserialize($_SESSION['logado']));
 
         $stmt->bindValue(':id_mes', $movimento->getId_mes());
 
@@ -34,6 +27,7 @@ class MovimentoPDO {
         $stmt->bindValue(':operacao', $movimento->getOperacao());
 
         $stmt->bindValue(':descricao', $movimento->getDescricao());
+        $stmt->bindValue(':id_usuario', $logado->getId());
 
         if ($stmt->execute()) {
             if ($movimento->getOperacao() == 'entrada') {
@@ -52,7 +46,8 @@ class MovimentoPDO {
 
     /* inserir */
 
-    public function selectMovimento() {
+    public function selectMovimento()
+    {
 
         $con = new conexao();
         $pdo = $con->getConexao();
@@ -65,7 +60,8 @@ class MovimentoPDO {
         }
     }
 
-    public function selectMovimentoId($id) {
+    public function selectMovimentoId($id)
+    {
 
         $con = new conexao();
         $pdo = $con->getConexao();
@@ -79,7 +75,8 @@ class MovimentoPDO {
         }
     }
 
-    public function selectMovimentoId_mes($id_mes) {
+    public function selectMovimentoId_mes($id_mes)
+    {
 
         $con = new conexao();
         $pdo = $con->getConexao();
@@ -93,7 +90,8 @@ class MovimentoPDO {
         }
     }
 
-    public function selectMovimentoData($data) {
+    public function selectMovimentoData($data)
+    {
 
         $con = new conexao();
         $pdo = $con->getConexao();
@@ -107,7 +105,8 @@ class MovimentoPDO {
         }
     }
 
-    public function selectMovimentoValor($valor) {
+    public function selectMovimentoValor($valor)
+    {
 
         $con = new conexao();
         $pdo = $con->getConexao();
@@ -121,7 +120,8 @@ class MovimentoPDO {
         }
     }
 
-    public function selectMovimentoOperacao($operacao) {
+    public function selectMovimentoOperacao($operacao)
+    {
 
         $con = new conexao();
         $pdo = $con->getConexao();
@@ -135,7 +135,8 @@ class MovimentoPDO {
         }
     }
 
-    public function selectMovimentoDescricao($descricao) {
+    public function selectMovimentoDescricao($descricao)
+    {
 
         $con = new conexao();
         $pdo = $con->getConexao();
@@ -149,7 +150,8 @@ class MovimentoPDO {
         }
     }
 
-    public function updateMovimento(Movimento $Movimento) {
+    public function updateMovimento(Movimento $Movimento)
+    {
         $con = new conexao();
         $pdo = $con->getConexao();
         $stmt = $pdo->prepare('updatemovimentoset id_mes = :id_mes , data = :data , valor = :valor , operacao = :operacao , descricao = :descricao where id = :id;');
@@ -168,7 +170,8 @@ class MovimentoPDO {
         return $stmt->rowCount();
     }
 
-    public function deleteMovimento($definir) {
+    public function deleteMovimento($definir)
+    {
         $con = new conexao();
         $pdo = $con->getConexao();
         $stmt = $pdo->prepare('delete from movimento where definir = :definir ;');
@@ -177,4 +180,5 @@ class MovimentoPDO {
         return $stmt->rowCount();
     }
 
-    /* chave */}
+    /* chave */
+}

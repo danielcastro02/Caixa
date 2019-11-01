@@ -1,6 +1,10 @@
+<?php
+include_once '../Base/requerLogin.php';
+?>
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html>
+
     <head>
         <title>Home</title>
         <?php

@@ -1,5 +1,8 @@
 <?php
 
+include_once '../Base/requerLogin.php';
+
+
 if (!isset($_SESSION)) {
     session_start();
 }

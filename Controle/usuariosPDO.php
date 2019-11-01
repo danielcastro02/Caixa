@@ -20,6 +20,9 @@ class UsuariosPDO{
     
              /*inserir*/
     function inserirUsuarios() {
+
+        include_once '../Base/requerLogin.php';
+
         $usuarios = new usuarios($_POST);
         if($_POST['senha1'] == $_POST['senha2']){
             $senhamd5 = md5($_POST['senha1']);
@@ -49,7 +52,9 @@ class UsuariosPDO{
             
 
     public function selectUsuarios(){
-            
+
+        include_once '../Base/requerLogin.php';
+
         $con = new conexao();
         $pdo = $con->getConexao();
         $stmt = $pdo->prepare('select * from usuarios ;');
@@ -64,7 +69,9 @@ class UsuariosPDO{
 
                     
     public function selectUsuariosId($id){
-            
+
+        include_once '../Base/requerLogin.php';
+
         $con = new conexao();
         $pdo = $con->getConexao();
         $stmt = $pdo->prepare('select * from usuarios where id = :id;');
@@ -80,7 +87,9 @@ class UsuariosPDO{
 
                     
     public function selectUsuariosNome($nome){
-            
+
+        include_once '../Base/requerLogin.php';
+
         $con = new conexao();
         $pdo = $con->getConexao();
         $stmt = $pdo->prepare('select * from usuarios where nome = :nome;');
@@ -96,7 +105,9 @@ class UsuariosPDO{
 
                     
     public function selectUsuariosUsuario($usuario){
-            
+
+        include_once '../Base/requerLogin.php';
+
         $con = new conexao();
         $pdo = $con->getConexao();
         $stmt = $pdo->prepare('select * from usuarios where usuario = :usuario;');
@@ -112,7 +123,9 @@ class UsuariosPDO{
 
                     
     public function selectUsuariosSenha($senha){
-            
+
+        include_once '../Base/requerLogin.php';
+
         $con = new conexao();
         $pdo = $con->getConexao();
         $stmt = $pdo->prepare('select * from usuarios where senha = :senha;');
@@ -126,7 +139,10 @@ class UsuariosPDO{
     }
     
  
-    public function updateUsuarios(Usuarios $Usuarios){        
+    public function updateUsuarios(Usuarios $Usuarios){
+
+        include_once '../Base/requerLogin.php';
+
         $con = new conexao();
         $pdo = $con->getConexao();
         $stmt = $pdo->prepare('updateusuariosset nome = :nome , usuario = :usuario , senha = :senha where id = :id;');
@@ -142,6 +158,9 @@ class UsuariosPDO{
     }            
     
     public function deleteUsuarios($definir){
+
+        include_once '../Base/requerLogin.php';
+
         $con = new conexao();
         $pdo = $con->getConexao();
         $stmt = $pdo->prepare('delete from usuarios where definir = :definir ;');

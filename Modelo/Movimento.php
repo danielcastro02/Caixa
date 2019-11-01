@@ -8,6 +8,8 @@ private $data;
 private $valor;
 private $operacao;
 private $descricao;
+private $id_usuario;
+private $data_registro;
 
 
 public function __construct() {
