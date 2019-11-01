@@ -213,7 +213,7 @@ class Relatorio_mensalPDO {
     public function deleteRelatorio_mensal($definir) {
         $con = new conexao();
         $pdo = $con->getConexao();
-        $stmt = $pdo->prepare('delete from relatorio_mensal where definir = :definir ;');
+        $stmt = $pdo->prepare('delete from relatorio_mensal where id = :definir ;');
         $stmt->bindValue(':definir', $definir);
         $stmt->execute();
         return $stmt->rowCount();

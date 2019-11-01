@@ -5,6 +5,14 @@
       <webServer id="a18aa6df-3b07-408d-b3a6-c61cee525951" name="Local" url="http://localhost">
         <fileTransfer port="0" mountedRoot="C:\xampp\htdocs" accessType="MOUNT" />
       </webServer>
+      <webServer id="9951e44e-33e8-443c-857f-babc90bccf48" name="prodServer" url="http://markeyvip.com">
+        <fileTransfer host="markeyvip.com" port="21" rootFolder="/public_html">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

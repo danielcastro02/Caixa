@@ -90,7 +90,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `usuario`, `senha`) VALUES
-(1, 'Daniel Castro', 'dcastro', '202cb962ac59075b964b07152d234b70');
+(1, 'Root', 'root', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Índices para tabelas despejadas

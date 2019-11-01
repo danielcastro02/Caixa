@@ -16,42 +16,43 @@ if (realpath('./index.php')) {
 }
 
 
-class UsuariosPDO{
-    
-             /*inserir*/
-    function inserirUsuarios() {
+class UsuariosPDO
+{
+
+    /*inserir*/
+    function inserirUsuarios()
+    {
 
         include_once '../Base/requerLogin.php';
 
         $usuarios = new usuarios($_POST);
-        if($_POST['senha1'] == $_POST['senha2']){
+        if ($_POST['senha1'] == $_POST['senha2']) {
             $senhamd5 = md5($_POST['senha1']);
             $con = new conexao();
             $pdo = $con->getConexao();
-            $stmt = $pdo->prepare('insert into usuarios values(default , :nome , :usuario , :senha);' );
+            $stmt = $pdo->prepare('insert into usuarios values(default , :nome , :usuario , :senha);');
 
-            $stmt->bindValue(':nome', $usuarios->getNome());    
-        
-            $stmt->bindValue(':usuario', $usuarios->getUsuario());    
-        
-            $stmt->bindValue(':senha', $senhamd5);    
-        
-            if($stmt->execute()){ 
+            $stmt->bindValue(':nome', $usuarios->getNome());
+
+            $stmt->bindValue(':usuario', $usuarios->getUsuario());
+
+            $stmt->bindValue(':senha', $senhamd5);
+
+            if ($stmt->execute()) {
                 header('location: ../index.php?msg=usuariosInserido');
-            }else{
+            } else {
                 header('location: ../index.php?msg=usuariosErroInsert');
             }
-        } else{
-            header('location: ../Tela/registroUsuario.php?msg=senhaerrada');      
+        } else {
+            header('location: ../Tela/registroUsuario.php?msg=senhaerrada');
         }
     }
+
     /*inserir*/
-                
-    
 
-            
 
-    public function selectUsuarios(){
+    public function selectUsuarios()
+    {
 
         include_once '../Base/requerLogin.php';
 
@@ -65,10 +66,10 @@ class UsuariosPDO{
             return false;
         }
     }
-    
 
-                    
-    public function selectUsuariosId($id){
+
+    public function selectUsuariosId($id)
+    {
 
         include_once '../Base/requerLogin.php';
 
@@ -83,10 +84,10 @@ class UsuariosPDO{
             return false;
         }
     }
-    
 
-                    
-    public function selectUsuariosNome($nome){
+
+    public function selectUsuariosNome($nome)
+    {
 
         include_once '../Base/requerLogin.php';
 
@@ -101,10 +102,10 @@ class UsuariosPDO{
             return false;
         }
     }
-    
 
-                    
-    public function selectUsuariosUsuario($usuario){
+
+    public function selectUsuariosUsuario($usuario)
+    {
 
         include_once '../Base/requerLogin.php';
 
@@ -119,10 +120,10 @@ class UsuariosPDO{
             return false;
         }
     }
-    
 
-                    
-    public function selectUsuariosSenha($senha){
+
+    public function selectUsuariosSenha($senha)
+    {
 
         include_once '../Base/requerLogin.php';
 
@@ -137,9 +138,10 @@ class UsuariosPDO{
             return false;
         }
     }
-    
- 
-    public function updateUsuarios(Usuarios $Usuarios){
+
+
+    public function updateUsuarios(Usuarios $Usuarios)
+    {
 
         include_once '../Base/requerLogin.php';
 
@@ -147,39 +149,41 @@ class UsuariosPDO{
         $pdo = $con->getConexao();
         $stmt = $pdo->prepare('updateusuariosset nome = :nome , usuario = :usuario , senha = :senha where id = :id;');
         $stmt->bindValue(':nome', $usuarios->getNome());
-        
+
         $stmt->bindValue(':usuario', $usuarios->getUsuario());
-        
+
         $stmt->bindValue(':senha', $usuarios->getSenha());
-        
+
         $stmt->bindValue(':id', $usuarios->getId());
         $stmt->execute();
         return $stmt->rowCount();
-    }            
-    
-    public function deleteUsuarios($definir){
+    }
+
+    public function deleteUsuarios($definir)
+    {
 
         include_once '../Base/requerLogin.php';
 
         $con = new conexao();
         $pdo = $con->getConexao();
-        $stmt = $pdo->prepare('delete from usuarios where definir = :definir ;');
+        $stmt = $pdo->prepare('delete from usuarios where id = :definir ;');
         $stmt->bindValue(':definir', $definir);
         $stmt->execute();
         return $stmt->rowCount();
     }
 
 
-            /*login*/
-    public function login() {
+    /*login*/
+    public function login()
+    {
         $con = new conexao();
         $pdo = $con->getConexao();
         $senha = md5($_POST['senha']);
         $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE usuario LIKE :usuario AND senha LIKE :senha");
         $stmt->bindValue(":usuario", $_POST['usuario']);
         $stmt->bindValue(":senha", $senha);
-        $stmt->execute();
-        if ($stmt->rowCount() > 0) {
+
+        if ($stmt->execute()) {
             $linha = $stmt->fetch(PDO::FETCH_ASSOC);
             $_SESSION['logado'] = serialize(new Usuarios($linha));
             header("Location: ../Tela/home.php");
@@ -187,12 +191,14 @@ class UsuariosPDO{
             header("Location: ../Tela/login.php?msg=erro");
         }
     }
-    
-    function logout(){
+
+    function logout()
+    {
         session_destroy();
         header('location: ../Tela/login.php');
     }
-    
-/*login*/
 
-/*chave*/}
+    /*login*/
+
+    /*chave*/
+}

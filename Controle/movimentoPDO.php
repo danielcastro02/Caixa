@@ -174,7 +174,7 @@ class MovimentoPDO
     {
         $con = new conexao();
         $pdo = $con->getConexao();
-        $stmt = $pdo->prepare('delete from movimento where definir = :definir ;');
+        $stmt = $pdo->prepare('delete from movimento where id = :definir ;');
         $stmt->bindValue(':definir', $definir);
         $stmt->execute();
         return $stmt->rowCount();

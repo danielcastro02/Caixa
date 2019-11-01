@@ -9,6 +9,13 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="prodServer">
+        <serverdata>
+          <mappings>
+            <mapping deploy="caixa.markeyvip.com" local="$PROJECT_DIR$" web="https://caixa.markeyvip.com" />
+          </mappings>
+        </serverdata>
+      </paths>
     </serverData>
   </component>
 </project>
