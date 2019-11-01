@@ -6,6 +6,14 @@
         <serverdata>
           <mappings>
             <mapping deploy="SistemaIgreja" local="$PROJECT_DIR$" web="/SistemaIgreja" />
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="igreja">
+        <serverdata>
+          <mappings>
+            <mapping deploy="igreja.markeyvip.com" local="$PROJECT_DIR$" web="https://igreja.markeyvip.com" />
           </mappings>
         </serverdata>
       </paths>

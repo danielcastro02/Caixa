@@ -1,0 +1,136 @@
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-top: 2px;
+    padding-bottom: 3px;
+
+}/*
+.fotoPerfil{
+
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+}
+.linkfoto{
+    background: linear-gradient(transparent, transparent, black);
+    background-size: 50px;
+    opacity: 0;
+    height: 150px;
+    border-radius: 50%;
+    padding-top: 65%;
+    transition: ease-in 0.2s;
+}
+
+.linkfoto:hover{
+    opacity: 1;
+}
+
+
+.corpadrao{
+        background: linear-gradient(to bottom, #0277bd , #039be5);
+    background: linear-gradient(to bottom, #0277bd , #039be5);
+}
+
+.corcancelar{
+        background: linear-gradient(to bottom, #0277bd , #039be5);
+    background: linear-gradient(to bottom, #d32f2f , #e53935 );
+}
+
+.alerta_vermelho{
+    color: red;
+}
+
+*/
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url("../Img/bg1.jpg");
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+
+.corPadrao1{
+    /*Branco*/
+    background: #FFFFFF;
+}
+
+.corPadrao2{
+    /*Azul Escuro*/
+    background: #1D345C;
+}
+
+.corPadrao3{
+    /*Laranja*/
+    background: #E25211;
+    font-weight: bold;
+}
+
+.textoCorPadrao2{
+    color: #1D345C;
+    font-weight: bold;
+
+}
+
+.textoCorPadrao3{
+    color: #E25211;
+    font-weight: bold;
+    cursor: default;
+}
+.btn-collor{
+    background-color: #26c6da;
+}
+/*btn-large:hover{*/
+/*    background-color: #4d5052 ;!important*/
+/*}*/
+.btn-collor:hover{
+}
+.disabled.btn-large{
+}
+
+nav{
+    background-color: white;
+}
+
+.card{
+    background-color: #e0f7fa;
+}
+.dropdown-content{
+}
+.dropdown-content li a{
+    color: black;
+}
+.dropdown-content li:hover{
+}
+
+body{
+    color: black;
+}
+footer a{
+    color: black;
+}
+.dropdown-trigger{
+    color: black;
+}
+nav div a{
+    color: black;
+}
+.brand-logo{
+    color: black !important;
+}

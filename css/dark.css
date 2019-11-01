@@ -1,0 +1,133 @@
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-top: 2px;
+    padding-bottom: 3px;
+
+}/*
+.fotoPerfil{
+
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+}
+.linkfoto{
+    background: linear-gradient(transparent, transparent, black);
+    background-size: 50px;
+    opacity: 0;
+    height: 150px;
+    border-radius: 50%;
+    padding-top: 65%;
+    transition: ease-in 0.2s;
+}
+
+.linkfoto:hover{
+    opacity: 1;
+}
+
+
+.corpadrao{
+        background: linear-gradient(to bottom, #0277bd , #039be5);
+    background: linear-gradient(to bottom, #0277bd , #039be5);
+}
+
+.corcancelar{
+        background: linear-gradient(to bottom, #0277bd , #039be5);
+    background: linear-gradient(to bottom, #d32f2f , #e53935 );
+}
+
+.alerta_vermelho{
+    color: red;
+}
+
+*/
+
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #2b2b2b;
+  }
+
+main {
+    flex: 1 0 auto;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+
+.corPadrao1{
+    /*Branco*/
+    background: #FFFFFF;
+}
+
+.corPadrao2{
+    /*Azul Escuro*/
+    background: #535658;
+}
+
+.corPadrao3{
+    /*Laranja*/
+    background: #535658;
+}
+
+.textoCorPadrao2{
+    color: white;
+
+}
+
+.textoCorPadrao3{
+    color: #E25211;
+    font-weight: bold;
+    cursor: default;
+}
+.btn-collor{
+    background-color: #3c3f41;
+}
+/*btn-large:hover{*/
+/*    background-color: #4d5052 ;!important*/
+/*}*/
+.btn-collor:hover{
+    background-color: #4d5052 ;!important
+}
+.disabled.btn-large{
+    background-color: #3c3f41 !important;
+}
+
+nav{
+    background-color: #3c3f41;
+}
+
+.card{
+    background-color: #3c3f41;
+}
+.dropdown-content{
+    background-color: #3c3f41;
+}
+.dropdown-content li a{
+    color: white;
+}
+.dropdown-content li:hover{
+    background-color: #535658;
+}
+
+body{
+    color: white;
+}
+input{
+    color: white;
+    border-bottom: 1px solid white ;
+}
+.input-field > label {
+    color: white;
+}

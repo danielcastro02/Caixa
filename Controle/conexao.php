@@ -9,9 +9,9 @@ class conexao
     {
         if (is_null(self::$con)) {
             try {
-                self::$con = new PDO('mysql:host=localhost;dbname=caixa', 'caixa', 'Class.7ufo', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+                self::$con = new PDO('mysql:host=localhost;dbname=igreja', 'igreja', 'Class.7ufo', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
             } catch (Exception $e) {
-                self::$con = new PDO('mysql:host=localhost;dbname=caixa', 'root', '', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+                self::$con = new PDO('mysql:host=localhost;dbname=igreja', 'root', '', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
             }
         }
         return self::$con;
@@ -20,7 +20,7 @@ class conexao
     public static function getTransactConnetion(): PDO
     {
         try {
-            return new PDO('mysql:host=localhost;dbname=caixa', 'caixa', 'Class.7ufo', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+            return new PDO('mysql:host=localhost;dbname=igreja', 'igreja', 'Class.7ufo', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
         } catch (Exception $e) {
             return new PDO('mysql:host=localhost;dbname=caixa', 'root', '', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
         }

@@ -91,7 +91,7 @@ class Relatorio_mensalPDO {
         }
         $relatorio->setSaldofinal($saldo);
         $this->updateRelatorio_mensal($relatorio);
-        header('location: ../Tela/istarRelatorio.php');
+        header('location: ../Tela/listarRelatorio.php');
     }
 
     public function selectRelatorio_mensal() {

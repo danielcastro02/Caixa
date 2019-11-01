@@ -35,7 +35,7 @@ include_once '../Base/requerLogin.php';
             <div class="row">
                 <div class="col s6">
                     <div class="row">
-                        <div class="card col s10 offset-s1 cyan lighten-5 z-depth-5">
+                        <div class="card col s10 offset-s1 z-depth-5">
                             <div class="row"></div>
 
                             <div class="row">
@@ -51,22 +51,22 @@ include_once '../Base/requerLogin.php';
                                         </a>
                                     </div>
                                     <div class="row">
-                                        <a href="./novoRelatorio.php" class="btn-large col s12 cyan lighten-1 waves-effect">
+                                        <a href="./novoRelatorio.php" class="btn-large col s12 btn-collor waves-effect">
                                             <h5>Novo Relatório</h5>
                                         </a>
                                     </div>
                                     <div class="row">
-                                        <a href="./listarRelatorio.php" class="btn-large col s12 cyan lighten-1 waves-effect">
+                                        <a href="./listarRelatorio.php" class="btn-large col s12 btn-collor waves-effect">
                                             <h5>Listar Relatório</h5>
                                         </a>
                                     </div>
                                     <div class="row">
-                                        <a href="./novaDescricao.php" class="btn-large col s12 cyan lighten-1 waves-effect">
+                                        <a href="./novaDescricao.php" class="btn-large col s12 btn-collor waves-effect">
                                             <h5>Nova Descrição</h5>
                                         </a>
                                     </div>
                                     <div class="row">
-                                        <a href="./listarDescricao.php" class="btn-large col s12 cyan lighten-1 waves-effect">
+                                        <a href="./listarDescricao.php" class="btn-large col s12 btn-collor waves-effect">
                                             <h5>Listar Descrição</h5>
                                         </a>
                                     </div>
@@ -79,23 +79,23 @@ include_once '../Base/requerLogin.php';
 
                 <div class="col s6">
                     <div class="row">
-                        <div class="card col s10 offset-s1 cyan lighten-5 z-depth-5">
+                        <div class="card col s10 offset-s1 z-depth-5">
                             <div class="row"></div>
 
                             <div class="row">
                                 <div class="container">
                                     <div class="row">
-                                        <a href="./consultaRelatorio.php" class="btn-large col s12 cyan lighten-1 waves-effect">
+                                        <a href="./consultaRelatorio.php" class="btn-large col s12 btn-collor waves-effect">
                                             <h5>Consultar Relatorios</h5>
                                         </a>
                                     </div>
                                     <div class="row">
-                                        <a href="./saida.php" class="btn-large col s12 cyan lighten-1 waves-effect disabled">
+                                        <a href="./saida.php" class="btn-large col s12 btn-collor waves-effect disabled">
                                             <h5>Relatorios anuais</h5>
                                         </a>
                                     </div>
                                     <div class="row">
-                                        <a href="./criarelatorio.php" class="btn-large col s12 cyan lighten-1 waves-effect disabled">
+                                        <a href="./criarelatorio.php" class="btn-large col s12 waves-effect disabled">
                                             <h5>Anotações</h5>
                                         </a>
                                     </div>

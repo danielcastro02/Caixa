@@ -22,7 +22,7 @@ include_once '../Base/requerLogin.php';
         <main>
             <div class="row">
                 <div class=" col s10  offset-l1">
-                    <h4 class="black-text center">Ralatórios Mensais</h4>
+                    <h4 class="textoCorPadrao2 center">Ralatórios Mensais</h4>
                     <div class="row">
                         <form action="./consultaRelatorio.php" method="post" name="relatorio" id="relatorio" class="col s12">
                             <div class="row">

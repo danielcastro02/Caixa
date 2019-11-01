@@ -13,6 +13,14 @@
           <option name="port" value="21" />
         </fileTransfer>
       </webServer>
+      <webServer id="edc43a69-2b23-471b-8336-843623cca56c" name="igreja" url="http://markeyvip.com">
+        <fileTransfer host="markeyvip.com" port="21" rootFolder="/public_html">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

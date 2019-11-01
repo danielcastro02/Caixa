@@ -13,8 +13,8 @@ if (realpath("./index.php")) {
 }
 ?>
 
-<footer class="center grey lighten-3">
-    <div class="footer-copyright black-text"><a target="_blank" href="http://markeyvip.com" class="center col l10 s12 offset-l1 black-text">
+<footer class="center">
+    <div class="footer-copyright"><a target="_blank" href="http://markeyvip.com" class="center col l10 s12 offset-l1">
             © 2019 Desenvolvido por - Markey</a>
     </div>
 </footer>

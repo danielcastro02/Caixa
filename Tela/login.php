@@ -13,9 +13,9 @@ if (isset($_SESSION['logado'])) {
         include_once '../Base/header.php';
         ?>
     <body class="homeimg">
-        <nav class="nav-extended white">
+        <nav class="nav-extended">
             <div class="nav-wrapper" style="width: 100vw; margin-left: auto; margin-right: auto;">
-                <a href="<?php echo $pontos; ?>./Tela/home.php" class="brand-logo left black-text">Bem Vindo</a>
+                <a href="<?php echo $pontos; ?>./Tela/home.php" class="brand-logo left">Bem Vindo</a>
             </div>
         </nav>
         <main>
