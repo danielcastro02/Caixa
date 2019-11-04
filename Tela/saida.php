@@ -30,7 +30,7 @@ include_once '../Base/requerLogin.php';
                                 $relatorios = $relatorioPDO->selectRelatorio_mensal();
                                 while ($linha = $relatorios->fetch()) {
                                     $relatorio = new relatorio_mensal($linha);
-                                    if ($relatorio->getStatus() == 'aberto') {
+                                    if ($relatorio->getStatus() == 'aberto'||$relatorio->getStatus()=="abertolincado") {
                                         echo "<option value='" . $relatorio->getId() . "'>" . $relatorio->getMes() . " " . $relatorio->getAno() . "</option>";
                                     }
                                 }

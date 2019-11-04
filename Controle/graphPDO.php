@@ -12,7 +12,7 @@ class graphPDO
         $relatorioMensalPDO = new Relatorio_mensalPDO();
         $stmtRelatorio = $relatorioMensalPDO->selectRelatorio_mensalId($id);
         $relatorio = new relatorio_mensal($stmtRelatorio->fetch());
-        $anterior = $relatorioMensalPDO->selectRelatorio_mensalId($relatorio->getId());
+        $anterior = $relatorioMensalPDO->selectRelatorio_mensalId($relatorio->getAnterior());
         $anterior = new relatorio_mensal($anterior->fetch());
         $saldo = $anterior->getSaldofinal();
         $movimentoPDO = new MovimentoPDO();

@@ -64,7 +64,7 @@ include_once '../Base/requerLogin.php';
                                             $anterior = $relatorioPDO->selectRelatorio_mensalId($atual->getAnterior());
                                             $anterior = new relatorio_mensal($anterior->fetch());
                                             echo'R$ ' . $anterior->getSaldofinal();
-                                            ?></h5>
+                                            ?></h5><a class="btn corPadrao2" href="./graficoLinha.php?id_mes=<?php echo $relatorio->getId()?>">Ver gráfico de linhas</a>
                                     </div>
                                     <thead>
                                         <tr>

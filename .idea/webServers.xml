@@ -5,8 +5,8 @@
       <webServer id="a18aa6df-3b07-408d-b3a6-c61cee525951" name="Local" url="http://localhost">
         <fileTransfer port="0" mountedRoot="C:\xampp\htdocs" accessType="MOUNT" />
       </webServer>
-      <webServer id="9951e44e-33e8-443c-857f-babc90bccf48" name="prodServer" url="http://markeyvip.com">
-        <fileTransfer host="markeyvip.com" port="21" rootFolder="/public_html">
+      <webServer id="9951e44e-33e8-443c-857f-babc90bccf48" name="Caixa" url="http://caixa.markeyvip.com">
+        <fileTransfer host="ftp.markeyvip.com" port="21" rootFolder="/public_html">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
@@ -14,7 +14,7 @@
         </fileTransfer>
       </webServer>
       <webServer id="edc43a69-2b23-471b-8336-843623cca56c" name="igreja" url="http://markeyvip.com">
-        <fileTransfer host="markeyvip.com" port="21" rootFolder="/public_html">
+        <fileTransfer host="ftp.markeyvip.com" port="21" rootFolder="/public_html">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

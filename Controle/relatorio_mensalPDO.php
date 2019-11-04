@@ -61,7 +61,7 @@ class Relatorio_mensalPDO {
             $relatorio->setStatus("aberto");
         }
         $this->updateRelatorio_mensal($relatorio);
-        header('location: ../Tela/ListarRelatorio.php');
+        header('location: ../Tela/listarRelatorio.php');
     }
 
     public function fechar() {
