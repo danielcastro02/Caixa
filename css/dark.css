@@ -131,3 +131,10 @@ input{
 .input-field > label {
     color: white;
 }
+
+.dropdown-content li>a, .dropdown-content li>span{
+    color: white!important;
+}
+.highlight{
+    color: #b3b2b9 !important;
+}
