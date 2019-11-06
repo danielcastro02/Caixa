@@ -21,6 +21,14 @@
           <option name="port" value="21" />
         </fileTransfer>
       </webServer>
+      <webServer id="0215482c-dfca-44a4-b00d-02335eda22db" name="Andoid" url="http://andoid.markeyvip.com">
+        <fileTransfer host="ftp.markeyvip.com" port="21" rootFolder="/public_html">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>
