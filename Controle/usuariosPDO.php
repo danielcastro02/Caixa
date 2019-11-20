@@ -182,8 +182,8 @@ class UsuariosPDO
         $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE usuario LIKE :usuario AND senha LIKE :senha");
         $stmt->bindValue(":usuario", $_POST['usuario']);
         $stmt->bindValue(":senha", $senha);
-
-        if ($stmt->execute()) {
+        $stmt->execute();
+        if ($stmt->rowCount()>0) {
             $linha = $stmt->fetch(PDO::FETCH_ASSOC);
             $_SESSION['logado'] = serialize(new Usuarios($linha));
             header("Location: ../Tela/home.php");
