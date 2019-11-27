@@ -174,6 +174,24 @@ class UsuariosPDO
 
 
     /*login*/
+
+    function loginApp(){
+        $con = new conexao();
+        $pdo = $con->getConexao();
+        $senha = $_GET['ps'];
+        $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE usuario LIKE :usuario AND senha LIKE :senha");
+        $stmt->bindValue(":usuario", $_GET['us']);
+        $stmt->bindValue(":senha", $senha);
+        $stmt->execute();
+        if ($stmt->rowCount()>0) {
+            $linha = $stmt->fetch(PDO::FETCH_ASSOC);
+            $_SESSION['logado'] = serialize(new Usuarios($linha));
+            header("Location: ../Tela/home.php");
+        } else {
+            header("Location: ../Tela/login.php?msg=erro");
+        }
+    }
+
     public function login()
     {
         $con = new conexao();
