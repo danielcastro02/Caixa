@@ -2,9 +2,6 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="a18aa6df-3b07-408d-b3a6-c61cee525951" name="Local" url="http://localhost">
-        <fileTransfer port="0" mountedRoot="C:\xampp\htdocs" accessType="MOUNT" />
-      </webServer>
       <webServer id="9951e44e-33e8-443c-857f-babc90bccf48" name="Caixa" url="http://caixa.markeyvip.com">
         <fileTransfer host="ftp.markeyvip.com" port="21" rootFolder="/public_html">
           <advancedOptions>
@@ -23,6 +20,14 @@
       </webServer>
       <webServer id="0215482c-dfca-44a4-b00d-02335eda22db" name="Andoid" url="http://andoid.markeyvip.com">
         <fileTransfer host="ftp.markeyvip.com" port="21" rootFolder="/public_html">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="6d2dd3d3-d6b9-4651-b78b-12e912b052be" name="zuchetto" url="https://zuchetto.markeyvip.com">
+        <fileTransfer host="ftp.markeyvip.com" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

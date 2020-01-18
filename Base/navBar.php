@@ -78,6 +78,7 @@ if (realpath("./index.php")) {
 
                 </ul>
             </li>
+            <li><a href="<?php echo $pontos; ?>./Tela/configuracoesAvancadas.php" class="">Configurações</a></li>
             <li><a href="<?php echo $pontos; ?>./Controle/usuariosControle.php?function=logout" class="">Sair</a></li>
             <!--usuarios-->
             <!--proximo-->

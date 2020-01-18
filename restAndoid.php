@@ -37,5 +37,5 @@ if ($_REQUEST['token_acesso'] == 'c-m35jf7k2gh34x6c2j45h7v3k56') {
         echo "]";
     }
 }else{
-    echo "[" . json_encode(array("erro" => "access_denied")) . "]";
+    echo "[" . json_encode(array("status" => "access_denied")) . "]";
 }

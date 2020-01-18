@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="Local">
+  <component name="PublishConfigData">
     <serverData>
       <paths name="Andoid">
         <serverdata>
@@ -16,18 +16,17 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="Local">
-        <serverdata>
-          <mappings>
-            <mapping deploy="SistemaIgreja" local="$PROJECT_DIR$" web="/SistemaIgreja" />
-            <mapping local="$PROJECT_DIR$" />
-          </mappings>
-        </serverdata>
-      </paths>
       <paths name="igreja">
         <serverdata>
           <mappings>
             <mapping deploy="igreja.markeyvip.com" local="$PROJECT_DIR$" web="https://igreja.markeyvip.com" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="zuchetto">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/public_html/zuchetto.markeyvip.com" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
