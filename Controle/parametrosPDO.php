@@ -90,7 +90,7 @@ class ParametrosPDO extends PDOBase
             $_SESSION['toast'][] = "O tamanho máximo de arquivo é de 15MB";
             header("location: ../Tela/configuracoesAvancadas.php");
         } else {
-            $fatorReducao = 6;
+            $fatorReducao = 0;
             $tamanho = filesize($_FILES['telainicial']['tmp_name']);
             $qualidade = (100000000 - ($tamanho * $fatorReducao)) / 1000000;
             if ($qualidade < 5) {

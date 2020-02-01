@@ -22,10 +22,10 @@ include_once '../Base/navBar.php';
 <main>
     <div class="row" style="margin-top: 10vh;">
         <form action="../Controle/movimentoControle.php?function=inserirMovimento"
-              class="card col l8 offset-l2 m10 offset-m1 s10 offset-s1" method="post" enctype="multipart/form-data">
+              class="card col l8 offset-l2 m10 offset-m1 s12" method="post" enctype="multipart/form-data">
             <div class="row center">
                 <h4 class="textoCorPadrao2">Registre a Saida</h4>
-                <div class="input-field col s6">
+                <div class="input-field col l6 s12">
                     <select name="id_mes">
                         <?php
                         $relatorios = $relatorioPDO->selectRelatorio_mensal();
@@ -39,11 +39,11 @@ include_once '../Base/navBar.php';
                     </select>
                     <label>Mes</label>
                 </div>
-                <div class="input-field col s6">
+                <div class="input-field col l6 s12">
                     <input type="text" autocomplete="off" name="data">
                     <label>Dia</label>
                 </div>
-                <div class="input-field col s6">
+                <div class="input-field col l6 s12">
                     <input type="number" step="0.01" name="valor" class="input-field">
                     <label>Valor</label>
                 </div>
