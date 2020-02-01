@@ -34,6 +34,14 @@
           <option name="port" value="21" />
         </fileTransfer>
       </webServer>
+      <webServer id="175b5be1-255f-4bb4-98ed-b10790585c15" name="CaixaBeta" url="http://beta.caixa.markeyvip.com">
+        <fileTransfer host="ftp.markeyvip.com" port="21" rootFolder="/public_html">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

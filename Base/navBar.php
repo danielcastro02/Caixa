@@ -14,13 +14,24 @@ if (realpath("./index.php")) {
         session_start();
     }
     if(!isset($_SESSION['logado'])){
-        header('location: '.$pontos.'./Tela/login.php');
+        ?>
+        <nav class="nav-extended">
+            <div class="nav-wrapper" style="width: 100vw; margin-left: auto; margin-right: auto;">
+                <a href="<?php echo $pontos; ?>./Tela/home.php" class="brand-logo left">Bem Vindo</a>
+
+                <ul class="right hide-on-med-and-down">
+                    <!--movimento-->
+                    <li><a href="<?php echo $pontos; ?>./Tela/consultaRelatorio.php" class="">Ver Relatórios</a></li>
+                    <li><a href="<?php echo $pontos; ?>./Tela/login.php" class="">Administração</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <?php
     }else{
         include_once $pontos.'./Modelo/Usuarios.php';
         $logado = new usuarios(unserialize($_SESSION['logado']));
-    }
-}
-?>
+   ?>
 
 <nav class="nav-extended">
     <div class="nav-wrapper" style="width: 100vw; margin-left: auto; margin-right: auto;">
@@ -94,3 +105,7 @@ $('.dropdown-trigger').dropdown({
     });
 
 </script>
+<?php
+    }
+}
+?>

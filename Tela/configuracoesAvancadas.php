@@ -83,7 +83,7 @@ include_once '../Base/navBar.php';
                         </form>
                     </div>
                 </div>
-                <form action="../Controle/parametrosControle.php?function=updateQrLink" method="post"
+                <form action="../Controle/parametrosControle.php?function=updateTelaInicial" method="post"
                       enctype="multipart/form-data">
                     <div class="col s12 l4">
                         <div class="col s12 l10 offset-l1 card">
@@ -94,12 +94,12 @@ include_once '../Base/navBar.php';
                                 <label for="linkApp">Dias de antecedencia para cancelar:</label>
                             </div>
                             <div class="col  s12 input-field">
-                                <input name="qr_app" type="file" hidden id="qr_app"/>
+                                <input name="telainicial" type="file" hidden id="qr_app"/>
                                 <img class="prev-img" style="
                              height: auto;
                               width: 80%;
                               ">
-                                <a href="#!" id="linkFotoQr" class="btn corPadrao2">Adicionar QR Code</a>
+                                <a href="#!" id="linkFotoQr" class="btn corPadrao2">Foto da tela inicial</a>
                                 <script>
                                     $("#linkFotoQr").click(function () {
                                         $("#qr_app").click();
@@ -137,6 +137,18 @@ include_once '../Base/navBar.php';
                                         Off
                                         <input type="checkbox"
                                                name="confirma_email" value="1"<?php echo $parametros->getConfirmaEmail() == 1 ? 'checked' : ''; ?>>
+                                        <span class="lever"></span>
+                                        On
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col s12 input-field">
+                                <div class="switch">
+                                    <span class="left teal-text">Contas públicas</span>
+                                    <label class="right">
+                                        Off
+                                        <input type="checkbox"
+                                               name="contas_publicas" value="1"<?php echo $parametros->isContasPublicas()==1 ? 'checked' : ''; ?>>
                                         <span class="lever"></span>
                                         On
                                     </label>

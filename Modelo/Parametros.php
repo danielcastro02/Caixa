@@ -28,6 +28,8 @@ class Parametros
     private $firebase_topic = "dispositivos";
     private $nome_db = "caixa";
     private $metodo_autenticacao = 1;
+    private $index_img = "/Img/bg1.jpg";
+    private $contas_publicas = 0;
 
 
     public function __construct()
@@ -63,6 +65,28 @@ class Parametros
             }
         }
     }
+
+    public function getIndexImg(): string
+    {
+        return $this->index_img;
+    }
+
+    public function setIndexImg(string $index_img): void
+    {
+        $this->index_img = $index_img;
+    }
+
+    public function isContasPublicas(): bool
+    {
+        return $this->contas_publicas;
+    }
+
+    public function setContasPublicas(bool $contas_publicas): void
+    {
+        $this->contas_publicas = $contas_publicas;
+    }
+
+
 
     public function save()
     {

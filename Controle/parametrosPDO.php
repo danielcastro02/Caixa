@@ -48,6 +48,7 @@ class ParametrosPDO extends PDOBase
         $parametros = new parametros();
         $parametros->atualizar($_POST);
         $parametros->setConfirmaEmail(isset($_POST['confirma_email']) ? 1 : 0);
+        $parametros->setContasPublicas(isset($_POST['contas_publicas']) ? 1 : 0);
         $parametros->save();
         header('location: ../Tela/configuracoesAvancadas.php?msg=parametrosAtualizados');
     }
@@ -83,14 +84,14 @@ class ParametrosPDO extends PDOBase
 
     }
 
-    public function alteraLogo()
+    public function updateTelaInicial()
     {
-        if (filesize($_FILES['imagem']['tmp_name']) > 15000000) {
+        if (filesize($_FILES['telainicial']['tmp_name']) > 15000000) {
             $_SESSION['toast'][] = "O tamanho máximo de arquivo é de 15MB";
-            header("location: ../Tela/editarParametros.php");
+            header("location: ../Tela/configuracoesAvancadas.php");
         } else {
             $fatorReducao = 6;
-            $tamanho = filesize($_FILES['imagem']['tmp_name']);
+            $tamanho = filesize($_FILES['telainicial']['tmp_name']);
             $qualidade = (100000000 - ($tamanho * $fatorReducao)) / 1000000;
             if ($qualidade < 5) {
                 $qualidade = 5;
@@ -100,40 +101,39 @@ class ParametrosPDO extends PDOBase
             //Receber os dados do formulÃ¡rio
             $antiga = $parametros->getLogo();
             $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
-            $nome_imagem = hash_file('md5', $_FILES['imagem']['tmp_name']);
+            $nome_imagem = hash_file('md5', $_FILES['telainicial']['tmp_name']);
             //Inserir no BD
-            $ext = explode('.', $_FILES['imagem']['name']);
+            $ext = explode('.', $_FILES['telainicial']['name']);
             $extensao = "." . $ext[(count($ext) - 1)];
-            $parametros->setIsFoto(1);
-            $parametros->setLogo('Img/' . $nome_imagem . ($extensao == '.svg' ? ".svg" : ($extensao == ".gif" ? ".gif" : ".webp")));
+            $parametros->setIndexImg('/Img/' . $nome_imagem . ($extensao == '.svg' ? ".svg" : ($extensao == ".gif" ? ".gif" : ".webp")));
             $parametros->save();
             switch ($extensao) {
                 case '.jpeg':
                 case '.jfif':
                 case '.jpg':
-                    imagewebp(imagecreatefromjpeg($_FILES['imagem']['tmp_name']), __DIR__ . '/../Img/' . $nome_imagem . '.webp', $qualidade);
+                    imagewebp(imagecreatefromjpeg($_FILES['telainicial']['tmp_name']), __DIR__ . '/../Img/' . $nome_imagem . '.webp', $qualidade);
                     break;
                 case '.svg':
-                    move_uploaded_file($_FILES['imagem']['tmp_name'], __DIR__ . '/../Img/' . $nome_imagem . '.svg');
+                    move_uploaded_file($_FILES['telainicial']['tmp_name'], __DIR__ . '/../Img/' . $nome_imagem . '.svg');
                     break;
                 case '.gif':
-                    move_uploaded_file($_FILES['imagem']['tmp_name'], __DIR__ . '/../Img/' . $nome_imagem . '.gif');
+                    move_uploaded_file($_FILES['telainicial']['tmp_name'], __DIR__ . '/../Img/' . $nome_imagem . '.gif');
                     break;
                 case '.png':
-                    $img = imagecreatefrompng($_FILES['imagem']['tmp_name']);
+                    $img = imagecreatefrompng($_FILES['telainicial']['tmp_name']);
                     imagepalettetotruecolor($img);
                     imagewebp($img, __DIR__ . '/../Img/' . $nome_imagem . '.webp', $qualidade);
                     break;
                 case '.webp':
-                    imagewebp(imagecreatefromwebp($_FILES['imagem']['tmp_name']), __DIR__ . '/../Img/' . $nome_imagem . '.webp', $qualidade);
+                    imagewebp(imagecreatefromwebp($_FILES['telainicial']['tmp_name']), __DIR__ . '/../Img/' . $nome_imagem . '.webp', $qualidade);
                     break;
                 case '.bmp':
-                    imagewebp(imagecreatefromwbmp($_FILES['imagem']['tmp_name']), __DIR__ . '/../Img/' . $nome_imagem . '.webp', $qualidade);
+                    imagewebp(imagecreatefromwbmp($_FILES['telainicial']['tmp_name']), __DIR__ . '/../Img/' . $nome_imagem . '.webp', $qualidade);
                     break;
             }
             //Verificar se os dados foram inseridos com sucesso
             if (realpath("../" . $antiga) && $antiga != $nome_imagem . ".webp") ;
-            header('Location: ../Tela/editarParametros.php');
+            header('Location: ../Tela/configuracoesAvancadas.php');
         }
     }
 

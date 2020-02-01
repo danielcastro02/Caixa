@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData">
+  <component name="PublishConfigData" autoUpload="Always" serverName="CaixaBeta">
     <serverData>
       <paths name="Andoid">
         <serverdata>
@@ -13,6 +13,13 @@
         <serverdata>
           <mappings>
             <mapping deploy="caixa.markeyvip.com" local="$PROJECT_DIR$" web="https://caixa.markeyvip.com" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="CaixaBeta">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/beta.caixa.markeyvip.com" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
@@ -31,5 +38,6 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>

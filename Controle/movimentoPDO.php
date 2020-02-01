@@ -2,7 +2,9 @@
 
 
 include_once __DIR__ . '/../Controle/conexao.php';
+include_once __DIR__ . '/../Controle/anexoPDO.php';
 include_once __DIR__ . '/../Modelo/Movimento.php';
+include_once __DIR__ . '/../Modelo/Anexo.php';
 include_once __DIR__ . "/../Modelo/Usuarios.php";
 
 
@@ -30,6 +32,12 @@ class MovimentoPDO
         $stmt->bindValue(':id_usuario', $logado->getId());
 
         if ($stmt->execute()) {
+            if(!($_FILES['anexo']['error']==4)) {
+                $anexoPDO = new AnexoPDO();
+                $anexo = new Anexo();
+                $anexo->setIdMovimento($pdo->lastInsertId("id"));
+                $anexoPDO->inserirAnexo($anexo);
+            }
             if ($movimento->getOperacao() == 'entrada') {
                 header('location: ../Tela/entrada.php?msg=movimentoInserido');
             } else {

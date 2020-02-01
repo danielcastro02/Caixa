@@ -52,6 +52,8 @@ body {
     flex-direction: column;
     background-attachment: fixed;
     background-size: cover;
+}
+.homeimg{
     background-image: url("../Img/bg1.jpg");
 }
 
