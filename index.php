@@ -22,6 +22,18 @@
     </div>
 </nav>
 <main>
+    <div class="hide-on-med-and-down" style="width: 100% ; height: 25vh;"></div>
+    <div class="row">
+        <div class="col s10 m6 l4 offset-l4 offset-m3 offset-s1 card">
+            <div class="row"></div>
+            <div class="row center">
+                <a class="btn corPadrao2" href="./Tela/consultaRelatorio.php">Consultar Relatórios</a>
+            </div>
+            <div class="row center">
+                <a class="btn corPadrao3" href="./Tela/login.php">Area Administrativa</a>
+            </div>
+        </div>
+    </div>
 </main>
 <?php
 include_once './Base/footer.php';
