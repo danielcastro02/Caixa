@@ -18,7 +18,7 @@ include_once '../Base/requerLogin.php';
         ?>
         <main>
             <div class="row" style="margin-top: 5vh;">
-                <table class="col s10 offset-s1 center">
+                <table class="col s12 center">
                     <tr class="center">
                         <td class="center">Descrição</td>
                         <td class="center">Editar</td>

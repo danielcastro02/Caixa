@@ -17,20 +17,21 @@ include_once '../Base/requerLogin.php';
         include_once '../Base/navBar.php';
         ?>
         <main>
-            <div class="row" style="margin-top: 10vh;">
-                <form action="../Controle/relatorio_mensalControle.php?function=inserirRelatorio_mensal" class="card col l8 offset-l2 m10 offset-m1 s10 offset-s1" method="post">
+            <div class="row" style="">
+                <form action="../Controle/relatorio_mensalControle.php?function=inserirRelatorio_mensal" class="card col l8 offset-l2 m10 offset-m1 s12" method="post">
                     <div class="row center">
                         <h4 class="textoCorPadrao2">Registre o relatório</h4>
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 l6">
                             <input type="text" name="mes">
                             <label>Mes</label>
                         </div>
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 l6">
                             <input type="text" name="ano">
                             <label>Ano</label>
                         </div>
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 l6">
                             <select name="id_anterior">
+                                <option value="0">Nenhum</option>
                                 <?php
                                 $relatorios = $relatorioPDO->selectRelatorio_mensal();
                                 while ($linha = $relatorios->fetch()) {

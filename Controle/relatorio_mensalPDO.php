@@ -28,7 +28,12 @@ class Relatorio_mensalPDO {
         $relatorio_mensal = new relatorio_mensal($_POST);
         $con = new conexao();
         $pdo = $con->getConexao();
-        $anterior = $this->selectRelatorio_mensalId($_POST['id_anterior']);
+        if($_POST['id_anterior'] ==0){
+            $pdo->exec("insert into relatorio_mensal values(default , 'Primeiro' , '0000' , 'fechado' , 0 , 0)");
+            $anterior = $this->selectRelatorio_mensalId($pdo->lastInsertId('id'));
+        }else {
+            $anterior = $this->selectRelatorio_mensalId($_POST['id_anterior']);
+        }
         $anterior = new relatorio_mensal($anterior->fetch());
         $anterior->setStatus("lincado");
         $this->updateRelatorio_mensal($anterior);
