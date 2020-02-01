@@ -26,7 +26,7 @@ class Parametros
     private $active_chat = 0;
     private $confirma_email = 0;
     private $firebase_topic = "dispositivos";
-    private $nome_db = "andoid";
+    private $nome_db = "caixa";
     private $metodo_autenticacao = 1;
 
 
@@ -67,7 +67,7 @@ class Parametros
     public function save()
     {
         file_put_contents(__DIR__ . '/parametros.json', json_encode(get_object_vars($this)));
-        file_put_contents(__DIR__ . '../../adm.markeyvip.com/Parametros/'.$_SERVER["HTTP_HOST"].".json", json_encode(get_object_vars($this)));
+        file_put_contents(__DIR__ . '/../../adm.markeyvip.com/Parametros/'.$_SERVER["HTTP_HOST"].".json", json_encode(get_object_vars($this)));
     }
 
     public function getIdParametro(): int

@@ -11,6 +11,7 @@ if (realpath("./index.php")) {
         }
     }
 }
+include_once __DIR__."/../Modelo/Parametros.php";
 $parametros = new Parametros();
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
