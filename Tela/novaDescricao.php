@@ -18,7 +18,7 @@ include_once '../Base/requerLogin.php';
                 <form action="../Controle/descricaoControle.php?function=inserirDescricao" class="card col l8 offset-l2 m10 offset-m1 s10 offset-s1" method="post">
                     <div class="row center">
                         <h4 class="textoCorPadrao2">Registre a descrição</h4>
-                        <div class="input-field col s10 offset-s1">
+                        <div class="input-field col s12">
                             <input type="text" name="texto">
                             <label>Descrição</label>
                         </div>
