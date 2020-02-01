@@ -34,10 +34,12 @@ include_once '../Base/requerLogin.php';
                                 <option value="0">Nenhum</option>
                                 <?php
                                 $relatorios = $relatorioPDO->selectRelatorio_mensal();
-                                while ($linha = $relatorios->fetch()) {
-                                    $relatorio = new relatorio_mensal($linha);
-                                    if ($relatorio->getStatus() == 'fechado') {
-                                        echo "<option value='".$relatorio->getId()."'>".$relatorio->getMes()." ".$relatorio->getAno()."</option>";
+                                if($relatorios) {
+                                    while ($linha = $relatorios->fetch()) {
+                                        $relatorio = new relatorio_mensal($linha);
+                                        if ($relatorio->getStatus() == 'fechado') {
+                                            echo "<option value='" . $relatorio->getId() . "'>" . $relatorio->getMes() . " " . $relatorio->getAno() . "</option>";
+                                        }
                                     }
                                 }
                                 ?>
