@@ -38,16 +38,10 @@ class Relatorio_mensalPDO {
         $anterior->setStatus("lincado");
         $this->updateRelatorio_mensal($anterior);
         $stmt = $pdo->prepare('insert into relatorio_mensal values(default , :mes , :ano , :status , :anterior , 0);');
-
         $stmt->bindValue(':mes', $relatorio_mensal->getMes());
-
         $stmt->bindValue(':ano', $relatorio_mensal->getAno());
-
         $stmt->bindValue(':status', $relatorio_mensal->getStatus());
-
         $stmt->bindValue(':anterior', $anterior->getId());
-
-
         if ($stmt->execute()) {
             header('location: ../Tela/home.php?msg=relatorio_mensalInserido');
         } else {
