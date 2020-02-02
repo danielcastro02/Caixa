@@ -136,3 +136,7 @@ nav div a{
 .brand-logo{
     color: black !important;
 }
+
+.animi {
+    transition: ease-in 0.15s;
+}
