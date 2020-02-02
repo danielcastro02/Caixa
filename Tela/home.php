@@ -35,7 +35,7 @@ include_once '../Base/requerLogin.php';
             <div class="row">
                 <div class="col l6 m6 s12">
                     <div class="row">
-                        <div class="card col s10 l12 offset-s1 z-depth-5">
+                        <div class="card col s10 offset-s1 l10 offset-l1 z-depth-5">
                             <div class="row"></div>
 
                             <div class="row">
