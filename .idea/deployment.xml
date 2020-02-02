@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="CaixaBeta">
+  <component name="PublishConfigData" serverName="CaixaBeta">
     <serverData>
       <paths name="Andoid">
         <serverdata>
@@ -38,6 +38,5 @@
         </serverdata>
       </paths>
     </serverData>
-    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>
