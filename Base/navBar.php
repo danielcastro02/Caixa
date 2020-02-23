@@ -86,14 +86,17 @@ if (realpath("./index.php")) {
             <!--usuariosregistro-->
                 <li><a href="<?php echo $pontos; ?>./Tela/registroUsuario.php">Registro</a></li>
             <!--usuariosregistro-->
-                
+
+                <li><a href="<?php echo $pontos; ?>./Tela/listarUsuarios.php">Listagem</a></li>
             <!--usuariositem-->
             <!--usuariositem-->
 
 
                 </ul>
             </li>
-            <li><a href="<?php echo $pontos; ?>./Tela/configuracoesAvancadas.php" class="">Configurações</a></li>
+            <?php if($logado->getAdmin() == 1) { ?>
+                <li><a href="<?php echo $pontos; ?>./Tela/configuracoesAvancadas.php" class="">Configurações</a></li>
+            <?php } ?>
             <li><a href="<?php echo $pontos; ?>./Controle/usuariosControle.php?function=logout" class="">Sair</a></li>
             <!--usuarios-->
             <!--proximo-->
