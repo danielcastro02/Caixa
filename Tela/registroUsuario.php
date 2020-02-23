@@ -1,5 +1,13 @@
 <?php
-include_once '../Base/requerLogin.php';
+    include_once '../Base/requerLogin.php';
+    include_once '../Modelo/Usuarios.php';
+    if(!isset($_SESSION)){
+        session_start();
+    }
+    if(isset($_SESSION['logado'])){
+        $logado = new usuarios(unserialize($_SESSION['logado']));
+    }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,6 +42,12 @@ include_once '../Base/requerLogin.php';
                             <input type="password" name="senha2">
                             <label>Repita a senha</label>
                         </div>
+                        <?php if ($logado->getAdmin() == 1) {?>
+                            <label>
+                                <input type="checkbox" class="filled-in" name="admin" />
+                                <span class="black-text">ADM</span>
+                            </label>
+                        <?php } ?>
                     </div>
                     <div class="row center">
                         <a href="../index.php" class="corPadrao3 btn">Voltar</a>
