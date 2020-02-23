@@ -30,13 +30,15 @@ class UsuariosPDO
             $senhamd5 = md5($_POST['senha1']);
             $con = new conexao();
             $pdo = $con->getConexao();
-            $stmt = $pdo->prepare('insert into usuarios values(default , :nome , :usuario , :senha);');
+            $stmt = $pdo->prepare('insert into usuarios values(default , :nome , :usuario , :senha, :admin);');
 
             $stmt->bindValue(':nome', $usuarios->getNome());
 
             $stmt->bindValue(':usuario', $usuarios->getUsuario());
 
             $stmt->bindValue(':senha', $senhamd5);
+
+            $stmt->bindValue(":admin", isset($_POST['admin']) ? 1 : 0);
 
             if ($stmt->execute()) {
                 header('location: ../index.php?msg=usuariosInserido');
@@ -64,6 +66,34 @@ class UsuariosPDO
             return $stmt;
         } else {
             return false;
+        }
+    }
+
+    function removeAdm()
+    {
+        $id = $_GET['id'];
+        $con = new conexao();
+        $pdo = $con->getConexao();
+        $stmt = $pdo->prepare('update usuarios set admin = 0 where id = :id');
+        $stmt->bindValue(":id", $id);
+        if($stmt->execute()) {
+            header("Location: ../Tela/listarUsuarios.php?sucesso");
+        } else {
+            header("Location: ../Tela/listarUsuarios.php?erro");
+        }
+    }
+
+    function addAdm()
+    {
+        $id = $_GET['id'];
+        $con = new conexao();
+        $pdo = $con->getConexao();
+        $stmt = $pdo->prepare('update usuarios set admin = 1 where id = :id');
+        $stmt->bindValue(":id", $id);
+        if($stmt->execute()) {
+            header("Location: ../Tela/listarUsuarios.php?sucesso");
+        } else {
+            header("Location: ../Tela/listarUsuarios.php?erro");
         }
     }
 

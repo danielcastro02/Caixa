@@ -6,6 +6,7 @@ private $id;
 private $nome;
 private $usuario;
 private $senha;
+private $admin;
 
 
 public function __construct() {
@@ -57,6 +58,14 @@ public function __construct() {
 
      function setSenha($senha){
           $this->senha = $senha;
+     }
+
+     public function getAdmin(){
+         return $this->admin;
+     }
+
+     function setAdmin($admin){
+          $this->admin = $admin;
      }
 
 }
