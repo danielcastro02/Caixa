@@ -1,0 +1,1 @@
+ALTER TABLE `usuarios` ADD `admin` INT(1) NOT NULL DEFAULT '0' AFTER `senha`;
