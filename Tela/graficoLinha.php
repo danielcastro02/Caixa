@@ -27,7 +27,7 @@ include_once '../Base/requerLogin.php';
             ?>
             <div class="row center">
                 <div class="col s4 offset-s4 z-depth-5 card light-green">
-                    <h5>Relatorio Criado!</h5>
+                    <h5>Relatório Criado!</h5>
                 </div>
             </div>
             <?php

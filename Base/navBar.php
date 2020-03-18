@@ -53,7 +53,7 @@ if (realpath("./index.php")) {
             <!--movimento-->
             <!--relatorio_mensal-->
             <li>
-                <a class='dropdown-trigger center '  data-hover="true" href='#' data-target='relatorio_mensal'>Relatorio mensal</a>
+                <a class='dropdown-trigger center '  data-hover="true" href='#' data-target='relatorio_mensal'>Relatório mensal</a>
                 <ul id='relatorio_mensal' class='dropdown-content'>
                     <li><a href="<?php echo $pontos; ?>./Tela/novoRelatorio.php">Novo</a></li>
                     <li><a href="<?php echo $pontos; ?>./Tela/listarRelatorio.php">Listar</a></li>
@@ -135,7 +135,7 @@ if (realpath("./index.php")) {
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header anime black-text" x="0">Relatorio mensal<i class="large material-icons right animi">arrow_drop_down</i></div>
+                    <div class="collapsible-header anime black-text" x="0">Relatório mensal<i class="large material-icons right animi">arrow_drop_down</i></div>
                     <div class="collapsible-body">
                         <ul class="grey lighten-2">
                             <li><a href="<?php echo $pontos; ?>./Tela/novoRelatorio.php">Novo</a></li>

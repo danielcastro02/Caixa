@@ -25,7 +25,7 @@ include_once '../Base/requerLogin.php';
                     ?>
                     <div class="row center">
                         <div class="col s4 offset-s4 z-depth-5 card light-green">
-                            <h5>Relatorio Criado!</h5>
+                            <h5>Relatório Criado!</h5>
                         </div>
                     </div>
                     <?php
@@ -86,12 +86,12 @@ include_once '../Base/requerLogin.php';
                                 <div class="container">
                                     <div class="row">
                                         <a href="./consultaRelatorio.php" class="btn-large col s12 btn-collor waves-effect">
-                                            <h5>Consultar Relatorios</h5>
+                                            <h5>Consultar Relatórios</h5>
                                         </a>
                                     </div>
                                     <div class="row">
                                         <a href="./saida.php" class="btn-large col s12 btn-collor waves-effect disabled">
-                                            <h5>Relatorios anuais</h5>
+                                            <h5>Relatórios anuais</h5>
                                         </a>
                                     </div>
                                     <div class="row">
