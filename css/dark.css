@@ -138,3 +138,12 @@ input{
 .highlight{
     color: #b3b2b9 !important;
 }
+
+.collapsible-header{
+    background-color: #535658 !important;
+    border-bottom: 1px solid #3c3f41 !important;
+}
+
+.sidenav{
+    background-color: #535658 !important;
+}

@@ -26,7 +26,7 @@ include_once '../Base/navBar.php';
 <main>
     <div class="row">
         <div class=" col s12">
-            <h4 class="textoCorPadrao2 center">Ralatórios Mensais</h4>
+            <h4 class="textoCorPadrao2 center">Relatórios Mensais</h4>
             <div class="row">
                 <form action="./consultaRelatorio.php" method="post" name="relatorio" id="relatorio" class="col s12">
                     <div class="row">
@@ -61,9 +61,9 @@ include_once '../Base/navBar.php';
                         <table class="bordered striped col s12"><?php
                             $atual = $relatorioPDO->selectRelatorio_mensalId($_POST['id_relatorio']);
                             $atual = new relatorio_mensal($atual->fetch());
-                            echo "<h5>Relatorio: " . $atual->getMes() . " " . $atual->getAno() . "</h5>"
+                            echo "<h5>Relatório: " . $atual->getMes() . " " . $atual->getAno() . "</h5>"
                             ?>
-                            <div class="row">
+                            <div class="row;">
                                 <h5>Saldo inicial: <?php
                                     $anterior = $relatorioPDO->selectRelatorio_mensalId($atual->getAnterior());
                                     $anterior = new relatorio_mensal($anterior->fetch());
@@ -146,10 +146,10 @@ include_once '../Base/navBar.php';
                         <?php
                             $atual = $relatorioPDO->selectRelatorio_mensalId($_POST['id_relatorio']);
                             $atual = new relatorio_mensal($atual->fetch());
-                            echo "<h5>Relatorio: " . $atual->getMes() . " " . $atual->getAno() . "</h5>"
+                            echo "<h5>Relatório: " . $atual->getMes() . " " . $atual->getAno() . "</h5>"
                             ?>
-                            <div class="row">
-                                <h5>Saldo inicial: <?php
+                            <div class="row" style="max-width: 100%">
+                                <h5 style="margin-left: 11px">Saldo inicial: <?php
                                     $anterior = $relatorioPDO->selectRelatorio_mensalId($atual->getAnterior());
                                     $anterior = new relatorio_mensal($anterior->fetch());
                                     echo 'R$ ' . $anterior->getSaldofinal();
