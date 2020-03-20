@@ -13,6 +13,8 @@ if (realpath("./index.php")) {
     if(!isset($_SESSION)){
         session_start();
     }
+    include_once __DIR__."/../Modelo/Parametros.php";
+    $parametros = new Parametros();
     if(!isset($_SESSION['logado'])){
         ?>
         <nav class="nav-extended">
@@ -112,15 +114,15 @@ if (realpath("./index.php")) {
                     <div class="background">
                         <img src="<?php echo $pontos; ?>./Img/bg1.jpg">
                     </div>
-                    <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-                    <a href="#name"><span class="white-text name">John Doe</span></a>
-                    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+<!--                    <a href="#user"><img class="circle" src="images/yuna.jpg"></a>-->
+                    <a href="#name"><span class="<?php if ($parametros->getTema() == "dark.css"){echo "black-text";}else{echo "white-text";}?> name"><?php echo $logado->getNome() ?></span></a>
+                    <a href="#email"><span class="white-text email"></span></a>
 
                 </div></li>
             <ul class="collapsible">
                 <a href="<?php echo $pontos; ?>./index.php" class="black-text">
                     <li>
-                        <div class="headerMeu">
+                        <div style="margin-left: 10px;">
                             Início
                         </div>
                     </li>
@@ -165,13 +167,13 @@ if (realpath("./index.php")) {
 
                         <a href="<?php echo $pontos; ?>./Tela/configuracoesAvancadas.php" class="black-text">
                             <li>
-                                <div class="black-text">Configurações</div>
+                                <div class="black-text" style="margin-left: 10px;">Configurações</div>
                             </li>
                         </a>
 
                 <a class="black-text modal-trigger" href="<?php echo $pontos; ?>./Controle/usuariosControle.php?function=logout">
                     <li>
-                        <div class="black-text">
+                        <div class="black-text" style="margin-left: 10px;">
                             Sair
                         </div>
                     </li>
