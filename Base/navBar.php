@@ -37,79 +37,18 @@ if (realpath("./index.php")) {
    ?>
 
 <nav class="nav-extended">
-    <div class="nav-wrapper" style="width: 100vw; margin-left: auto; margin-right: auto;">
+    <div class="nav-wrapper hide-on-large-only" style="width: 100vw; margin-left: auto; margin-right: auto;">
         <a href="#" data-target="slide-out" class="sidenav-trigger">
             <i class="material-icons black-text">menu</i>
         </a>
-        <a href="<?php echo $pontos; ?>./Tela/home.php" class="brand-logo">MarkeyVip</a>
-        <ul class="right hide-on-med-and-down">
-            <!--movimento-->
-            <li><a href="#!" class=""><?php echo $logado->getNome() ?></a></li>
-            <li>
-                <a class='dropdown-trigger center ' data-hover="true" href='#' data-target='movimento'>Movimento</a>
-                <ul id='movimento' class='dropdown-content'>
-                    <li><a href="<?php echo $pontos; ?>./Tela/entrada.php">Registrar Entrada</a></li>
-                    <li><a href="<?php echo $pontos; ?>./Tela/saida.php">Registrar Saida</a></li>
-                </ul>
-            </li>
-            <!--movimento-->
-            <!--relatorio_mensal-->
-            <li>
-                <a class='dropdown-trigger center '  data-hover="true" href='#' data-target='relatorio_mensal'>Relatório mensal</a>
-                <ul id='relatorio_mensal' class='dropdown-content'>
-                    <li><a href="<?php echo $pontos; ?>./Tela/novoRelatorio.php">Novo</a></li>
-                    <li><a href="<?php echo $pontos; ?>./Tela/listarRelatorio.php">Listar</a></li>
-                    <li><a href="<?php echo $pontos; ?>./Tela/consultaRelatorio.php">Consultar Relatório</a></li>
-                    <!--relatorio_mensalitem-->
-                    <!--relatorio_mensalitem-->
-                </ul>
-            </li>
-            
-            <li>
-                <a class='dropdown-trigger center '  data-hover="true" href='#' data-target='desc'>Descrição</a>
-                <ul id='desc' class='dropdown-content'>
-                    <li><a href="<?php echo $pontos; ?>./Tela/novaDescricao.php">Nova</a></li>
-                    <li><a href="<?php echo $pontos; ?>./Tela/listarDescricao.php">Listar</a></li>
-                    <!--relatorio_mensalitem-->
-                    <!--relatorio_mensalitem-->
-                </ul>
-            </li>
-            <!--relatorio_mensal-->
-            <!--usuarios-->
-            <li>
-                <a class='dropdown-trigger center '  data-hover="true" href='#' data-target='usuarios'>Usuarios</a>
-                <ul id='usuarios' class='dropdown-content'>
-                    
-            <!--usuarioslogin-->
-                <li><a href="<?php echo $pontos; ?>./Tela/login.php">Login</a></li>
-            <!--usuarioslogin-->
-                
-            
-            <!--usuariosregistro-->
-                <li><a href="<?php echo $pontos; ?>./Tela/registroUsuario.php">Registro</a></li>
-            <!--usuariosregistro-->
+<!--        <a href="--><?php //echo $pontos; ?><!--./Tela/home.php" style="margin-left: 11%" class="brand-logo center hide-on-med-and-down">MarkeyVip</a>-->
+<!--        <a href="--><?php //echo $pontos; ?><!--./Tela/home.php" class="brand-logo center hide-on-large-only">MarkeyVip</a>-->
 
-                <li><a href="<?php echo $pontos; ?>./Tela/listarUsuarios.php">Listagem</a></li>
-            <!--usuariositem-->
-            <!--usuariositem-->
-
-
-                </ul>
-            </li>
-            <?php if($logado->getAdmin() == 1) { ?>
-                <li><a href="<?php echo $pontos; ?>./Tela/configuracoesAvancadas.php" class="">Configurações</a></li>
-            <?php } ?>
-            <li><a href="<?php echo $pontos; ?>./Controle/usuariosControle.php?function=logout" class="">Sair</a></li>
-            <!--usuarios-->
-            <!--proximo-->
-            <!--proximo-->
-
-        </ul>
     </div>
 
 </nav>
 
-        <ul id="slide-out" class="sidenav">
+        <ul id="slide-out" class="sidenav sidenav-fixed">
             <li><div class="user-view">
                     <div class="background">
                         <img src="<?php echo $pontos; ?>./Img/bg1.jpg">

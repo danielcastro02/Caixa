@@ -59,7 +59,15 @@ main {
     flex: 1 0 auto;
 }
 
+header, main, footer {
+    padding-left: 300px;
+}
 
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+}
 
 ::-webkit-scrollbar {
     width: 0px;
@@ -142,6 +150,10 @@ input{
 .collapsible-header{
     background-color: #535658 !important;
     border-bottom: 1px solid #3c3f41 !important;
+}
+
+.animi {
+    transition: ease-in 0.15s;
 }
 
 .sidenav{

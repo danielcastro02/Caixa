@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html>
-<head>
+<head style="padding-left: 0">
     <meta charset="UTF-8">
     <title>Login</title>
     <?php
@@ -9,7 +9,7 @@
     include_once './Modelo/Parametros.php';
     $parametros = new Parametros();
     ?>
-<body style="background-image: url('.<?php echo $parametros->getIndexImg()?>')">
+<body style="background-image: url('.<?php echo $parametros->getIndexImg()?>'); padding-left: 0">
 <nav class="nav-extended">
     <div class="nav-wrapper" style="width: 100vw; margin-left: auto; margin-right: auto;">
         <a href="<?php echo $pontos; ?>./Tela/home.php" class="brand-logo left">Bem Vindo</a>
@@ -21,7 +21,7 @@
     </ul>
     </div>
 </nav>
-<main>
+<main style="padding-left: 0">
     <div class="hide-on-med-and-down" style="width: 100% ; height: 25vh;"></div>
     <div class="row">
         <div class="col s10 m6 l4 offset-l4 offset-m3 offset-s1 card">

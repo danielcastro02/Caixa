@@ -6,19 +6,19 @@ if (isset($_SESSION['logado'])) {
 ?>
 
 <html>
-    <head>
+    <head style="padding-left: 0">
         <meta charset="UTF-8">
         <title>Login</title>
         <?php
         include_once '../Base/header.php';
         ?>
-    <body class="homeimg">
+    <body class="homeimg" style="padding-left: 0">
         <nav class="nav-extended">
             <div class="nav-wrapper" style="width: 100vw; margin-left: auto; margin-right: auto;">
                 <a href="<?php echo $pontos; ?>./Tela/home.php" class="brand-logo left">Bem Vindo</a>
             </div>
         </nav>
-        <main>
+        <main style="padding-left: 0">
             <div class="row" style="margin-top: 15vh;">
                 <form action="../Controle/usuariosControle.php?function=login" class="card col l6 offset-l3 m8 offset-m2 s10 offset-s1" method="post">
                     <div class="row center">
