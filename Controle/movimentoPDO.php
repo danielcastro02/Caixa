@@ -3,12 +3,13 @@
 
 include_once __DIR__ . '/../Controle/conexao.php';
 include_once __DIR__ . '/../Controle/anexoPDO.php';
+include_once __DIR__ . '/../Controle/PDOBase.php';
 include_once __DIR__ . '/../Modelo/Movimento.php';
 include_once __DIR__ . '/../Modelo/Anexo.php';
 include_once __DIR__ . "/../Modelo/Usuarios.php";
 
 
-class MovimentoPDO
+class MovimentoPDO extends PDOBase
 {
     /* inserir */
 
@@ -38,15 +39,20 @@ class MovimentoPDO
                 $anexo->setIdMovimento($pdo->lastInsertId("id"));
                 $anexoPDO->inserirAnexo($anexo);
             }
-            if ($movimento->getOperacao() == 'entrada') {
+            if ($movimento->getOperacao() >0) {
+                $this->addToast("Entrada Registrada!");
                 header('location: ../Tela/entrada.php?msg=movimentoInserido');
             } else {
+                $this->addToast("Saida Registrada!");
                 header('location: ../Tela/saida.php?msg=movimentoInserido');
             }
         } else {
-            if ($movimento->getOperacao() == 'entrada') {
+            if ($movimento->getOperacao() > 0) {
+                $this->addToast("Erro ao registrar entrada!");
+
                 header('location: ../Tela/entrada.php?msg=movimentoErroInsert');
             } else {
+                $this->addToast("Erro ao registrar saída!");
                 header('location: ../Tela/saida.php?msg=movimentoErroInsert');
             }
         }

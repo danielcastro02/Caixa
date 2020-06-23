@@ -1,7 +1,7 @@
 <?php
 
 include_once __DIR__."/../Modelo/Parametros.php";
-include_once __DIR__."/../Modelo/Usuario.php";
+include_once __DIR__."/../Modelo/Usuarios.php";
 class PDOBase
 {
 
@@ -30,8 +30,8 @@ class PDOBase
             header("location: ../Tela/login.php");
             exit(0);
         }else{
-            $usuario = new usuario(unserialize($_SESSION['logado']));
-            if($usuario->getAdministrador()==0){
+            $usuario = new usuarios(unserialize($_SESSION['logado']));
+            if($usuario->getAdmin()==0){
                 header("location: ../Tela/acessoNegado.php");
                 exit(0);
             }

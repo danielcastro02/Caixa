@@ -47,6 +47,7 @@ include_once '../Base/navBar.php';
                     <input type="number" step="0.01" name="valor" class="input-field">
                     <label>Valor</label>
                 </div>
+
                 <input type="text" hidden="true" value="entrada" name="operacao"/>
             </div>
             <div class="row">
