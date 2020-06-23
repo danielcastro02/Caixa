@@ -26,7 +26,7 @@ class Parametros
     private $active_chat = 0;
     private $confirma_email = 0;
     private $firebase_topic = "dispositivos";
-    private $nome_db = "masteradm";
+    private $nome_db = "caixa";
     private $metodo_autenticacao = 1;
     private $index_img = "/Img/bg1.jpg";
     private $contas_publicas = 0;
