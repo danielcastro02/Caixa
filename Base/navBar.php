@@ -32,8 +32,8 @@ if (realpath("./index.php")) {
 
         <?php
     }else{
-        include_once $pontos.'./Modelo/Usuarios.php';
-        $logado = new usuarios(unserialize($_SESSION['logado']));
+        include_once $pontos.'./Modelo/Usuario.php';
+        $logado = new usuario(unserialize($_SESSION['logado']));
    ?>
 
 <nav class="nav-extended">
@@ -89,17 +89,17 @@ if (realpath("./index.php")) {
                 <li><a href="<?php echo $pontos; ?>./Tela/registroUsuario.php">Registro</a></li>
             <!--usuariosregistro-->
 
-                <li><a href="<?php echo $pontos; ?>./Tela/listarUsuarios.php">Listagem</a></li>
+                <li><a href="<?php echo $pontos; ?>./Tela/listagemUsuario.php">Listagem</a></li>
             <!--usuariositem-->
             <!--usuariositem-->
 
 
                 </ul>
             </li>
-            <?php if($logado->getAdmin() == 1) { ?>
+            <?php if($logado->getAdministrador() == 1) { ?>
                 <li><a href="<?php echo $pontos; ?>./Tela/configuracoesAvancadas.php" class="">Configurações</a></li>
             <?php } ?>
-            <li><a href="<?php echo $pontos; ?>./Controle/usuariosControle.php?function=logout" class="">Sair</a></li>
+            <li><a href="<?php echo $pontos; ?>./Controle/usuarioControle.php?function=logout" class="">Sair</a></li>
             <!--usuarios-->
             <!--proximo-->
             <!--proximo-->
@@ -171,7 +171,7 @@ if (realpath("./index.php")) {
                             </li>
                         </a>
 
-                <a class="black-text modal-trigger" href="<?php echo $pontos; ?>./Controle/usuariosControle.php?function=logout">
+                <a class="black-text modal-trigger" href="<?php echo $pontos; ?>./Controle/usuarioControle.php?function=logout">
                     <li>
                         <div class="black-text" style="margin-left: 10px;">
                             Sair
