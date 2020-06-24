@@ -26,10 +26,12 @@ class Parametros
     private $active_chat = 0;
     private $confirma_email = 0;
     private $firebase_topic = "dispositivos";
-    private $nome_db = "masteradm";
+    private $nome_db = "caixa";
     private $metodo_autenticacao = 1;
     private $index_img = "/Img/bg1.jpg";
     private $contas_publicas = 0;
+    private $sms = 0;
+    private $enviarNotificacao = 0;
 
 
     public function __construct()
@@ -64,6 +66,17 @@ class Parametros
                 $this->$atributo = $valor;
             }
         }
+    }
+
+
+    public function getEnviarNotificacao(): int
+    {
+        return $this->enviarNotificacao;
+    }
+
+    public function setEnviarNitoficacao(int $enviarNotoficacao): void
+    {
+        $this->enviarNotificacao = $enviarNotoficacao;
     }
 
     public function getIndexImg(): string
@@ -344,6 +357,14 @@ class Parametros
         $this->metodo_autenticacao = $metodo_autenticacao;
     }
 
+    public function getSms(): int
+    {
+        return $this->sms;
+    }
 
+    public function setSms(int $sms): void
+    {
+        $this->sms = $sms;
+    }
 
 }

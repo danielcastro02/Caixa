@@ -6,7 +6,7 @@ include_once __DIR__ . '/../Controle/anexoPDO.php';
 include_once __DIR__ . '/../Controle/PDOBase.php';
 include_once __DIR__ . '/../Modelo/Movimento.php';
 include_once __DIR__ . '/../Modelo/Anexo.php';
-include_once __DIR__ . "/../Modelo/Usuarios.php";
+include_once __DIR__ . "/../Modelo/Usuario.php";
 
 
 class MovimentoPDO extends PDOBase
@@ -19,7 +19,7 @@ class MovimentoPDO extends PDOBase
         $con = new conexao();
         $pdo = $con->getConexao();
         $stmt = $pdo->prepare('insert into movimento values(default , :id_mes , :data , :valor , :operacao , :descricao , :id_usuario , default);');
-        $logado = new usuarios(unserialize($_SESSION['logado']));
+        $logado = new usuario(unserialize($_SESSION['logado']));
 
         $stmt->bindValue(':id_mes', $movimento->getId_mes());
 
@@ -30,7 +30,7 @@ class MovimentoPDO extends PDOBase
         $stmt->bindValue(':operacao', $movimento->getOperacao());
 
         $stmt->bindValue(':descricao', $movimento->getDescricao());
-        $stmt->bindValue(':id_usuario', $logado->getId());
+        $stmt->bindValue(':id_usuario', $logado->getId_usuario());
 
         if ($stmt->execute()) {
             if(!($_FILES['anexo']['error']==4)) {
