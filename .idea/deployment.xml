@@ -19,7 +19,7 @@
       <paths name="CaixaBeta">
         <serverdata>
           <mappings>
-            <mapping deploy="/beta.caixa.markeyvip.com" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/igreja.markeyvip.com" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
